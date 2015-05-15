@@ -1,0 +1,47 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 840M  (ID=0x1341)
+    Vendor:   NVIDIA
+    VRAM:     1976 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.040 seconds
+desktop: 1366x768 60Hz; virtual: 2732x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Ajdin\Desktop\giftShoot\giftShoot_Data\Managed\System.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.405410 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 190.
+Total: 0.197060 ms (FindLiveObjects: 0.024632 ms CreateObjectMapping: 0.013855 ms MarkObjects: 0.144202 ms  DeleteObjects: 0.012829 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.666180 ms
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 147.
+Total: 0.251457 ms (FindLiveObjects: 0.025658 ms CreateObjectMapping: 0.013855 ms MarkObjects: 0.180125 ms  DeleteObjects: 0.030277 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.451596 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 192.
+Total: 0.307393 ms (FindLiveObjects: 0.028224 ms CreateObjectMapping: 0.016934 ms MarkObjects: 0.244272 ms  DeleteObjects: 0.016934 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.411568 ms
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 147.
+Total: 0.196547 ms (FindLiveObjects: 0.020527 ms CreateObjectMapping: 0.010776 ms MarkObjects: 0.141123 ms  DeleteObjects: 0.023093 ms)
+
