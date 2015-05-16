@@ -4,6 +4,9 @@
         Title="Forma Direktor" Height="550.176" Width="575.618">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="533" VerticalAlignment="Top" Width="676" Margin="0,0,-108,-13">
+            <TabItem Header="Desktop">
+                <Label Margin="25,10,506,462">Dobro došli, direktore</Label>
+            </TabItem>
             <TabItem Header="Katalog" Margin="-3,-2,-1,-1">
                 <Grid Background="#FFE5E5E5" RenderTransformOrigin="0.5,0.5" Margin="0,0,106,8">
                     

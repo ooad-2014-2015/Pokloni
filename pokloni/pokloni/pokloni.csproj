@@ -119,6 +119,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel1\LoginFormaViewModel.cs" />
+    <Compile Include="View\FormaDirektor.xaml.cs">
+      <DependentUpon>FormaDirektor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForma.xaml.cs">
       <DependentUpon>LoginForma.xaml</DependentUpon>
     </Compile>
