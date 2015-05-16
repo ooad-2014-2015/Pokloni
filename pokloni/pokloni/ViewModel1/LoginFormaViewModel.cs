@@ -28,9 +28,12 @@ namespace pokloni.ViewModel1 {
                 var ld = db.tblLoginData.First(l => l.username == Username && l.password == userPassword);
                 if(ld.tblOsoba.je_zensko)
                     global::System.Windows.MessageBox.Show(string.Format("Dobro dosla, {0}", ld.tblOsoba.ime.TrimEnd(' ')));
-                global::System.Windows.MessageBox.Show(string.Format("Dobro dosao, {0}e", ld.tblOsoba.ime.TrimEnd(' ')));
+                else
+                    global::System.Windows.MessageBox.Show(string.Format("Dobro dosao, {0}e", ld.tblOsoba.ime.TrimEnd(' ')));
+                
 
-                //global::System.Windows.MessageBox.Show(string.Format("",);
+
+                
             }
             catch (Exception) {
                 global::System.Windows.MessageBox.Show("Pogresna kombinacija. Molimo pokušajte ponovo");

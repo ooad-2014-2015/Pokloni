@@ -135,6 +135,7 @@
           <Property Name="opis" Type="nchar" MaxLength="1000" />
           <Property Name="prodao" Type="bigint" />
           <Property Name="proizveo" Type="bigint" />
+          <Property Name="naziv" Type="nchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblPoslovnica">
           <Key>
@@ -165,7 +166,7 @@
           <Key>
             <PropertyRef Name="uposlenik_id" />
           </Key>
-          <Property Name="uposlenik_id" Type="bigint" Nullable="false" />
+          <Property Name="uposlenik_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="osoba_id" Type="bigint" Nullable="false" />
           <Property Name="broj_radne_knjizice" Type="bigint" Nullable="false" />
           <Property Name="datum_uposlenja" Type="date" Nullable="false" />
@@ -432,6 +433,7 @@
           <Property Type="Int64" Name="proizveo" />
           <NavigationProperty Name="tblProdavač" Relationship="pokloni_model.FK_tblPoklon_tblProdavač" FromRole="tblPoklon" ToRole="tblProdavač" />
           <NavigationProperty Name="tblProizvodjac" Relationship="pokloni_model.FK_tblPoklon_tblProizvodjac" FromRole="tblPoklon" ToRole="tblProizvodjac" />
+          <Property Type="String" Name="naziv" MaxLength="50" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="tblPoslovnica">
           <Key>
@@ -695,6 +697,7 @@
           <EntitySetMapping Name="tblPoklon">
             <EntityTypeMapping TypeName="pokloni_model.tblPoklon">
               <MappingFragment StoreEntitySet="tblPoklon">
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="proizveo" ColumnName="proizveo" />
                 <ScalarProperty Name="prodao" ColumnName="prodao" />
                 <ScalarProperty Name="opis" ColumnName="opis" />
