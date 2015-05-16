@@ -53,16 +53,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="FormaProizvodjac.xaml.cs">
-      <DependentUpon>FormaProizvodjac.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FormaDirektor.xaml.cs">
-      <DependentUpon>FormaDirektor.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FormaProdavac.xaml.cs">
-      <DependentUpon>FormaProdavac.xaml</DependentUpon>
-    </Compile>
-    <Page Include="LoginForma.xaml">
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="View\FormaDirektor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FormaProdavac.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FormaProizvodjac.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -70,27 +70,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LoginForma.xaml.cs">
-      <DependentUpon>LoginForma.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="FormaProizvodjac.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="View\LoginForma.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FormaDirektor.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FormaProdavac.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,7 +100,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Untitled-1.jpg" />
+    <Resource Include="View\Untitled-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Properties\ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
