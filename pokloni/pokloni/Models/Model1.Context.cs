@@ -13,10 +13,10 @@ namespace pokloni.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class database_entities : DbContext
+    public partial class ajdin_connection : DbContext
     {
-        public database_entities()
-            : base("name=database_entities")
+        public ajdin_connection()
+            : base("name=ajdin_connection")
         {
         }
     
@@ -37,5 +37,6 @@ namespace pokloni.Models
         public DbSet<tblZahtjev> tblZahtjev { get; set; }
         public DbSet<Sesija> Sesija { get; set; }
         public DbSet<tblDirektor> tblDirektor { get; set; }
+        public DbSet<tblLoginData> tblLoginData { get; set; }
     }
 }

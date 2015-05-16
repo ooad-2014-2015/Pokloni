@@ -22,6 +22,7 @@ namespace pokloni.Models
             this.tblZahtjev = new HashSet<tblZahtjev>();
             this.Sesija = new HashSet<Sesija>();
             this.tblDirektor = new HashSet<tblDirektor>();
+            this.tblLoginData = new HashSet<tblLoginData>();
         }
     
         public long osoba_id { get; set; }
@@ -36,5 +37,6 @@ namespace pokloni.Models
         public virtual ICollection<tblZahtjev> tblZahtjev { get; set; }
         public virtual ICollection<Sesija> Sesija { get; set; }
         public virtual ICollection<tblDirektor> tblDirektor { get; set; }
+        public virtual ICollection<tblLoginData> tblLoginData { get; set; }
     }
 }

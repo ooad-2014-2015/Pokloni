@@ -18,5 +18,11 @@ namespace pokloni.Models
         public Nullable<decimal> cijena { get; set; }
         public string slika { get; set; }
         public string opis { get; set; }
+        public Nullable<long> prodao { get; set; }
+        public Nullable<long> proizveo { get; set; }
+        public string naziv { get; set; }
+    
+        public virtual tblProdavač tblProdavač { get; set; }
+        public virtual tblProizvodjac tblProizvodjac { get; set; }
     }
 }

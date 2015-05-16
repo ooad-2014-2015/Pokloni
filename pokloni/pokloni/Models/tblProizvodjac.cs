@@ -14,9 +14,15 @@ namespace pokloni.Models
     
     public partial class tblProizvodjac
     {
+        public tblProizvodjac()
+        {
+            this.tblPoklon = new HashSet<tblPoklon>();
+        }
+    
         public long proizvodjac_id { get; set; }
         public long uposlenik_id { get; set; }
     
         public virtual tblUposlenik tblUposlenik { get; set; }
+        public virtual ICollection<tblPoklon> tblPoklon { get; set; }
     }
 }

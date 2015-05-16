@@ -11,6 +11,7 @@
           <EntitySet Name="tblDirektor" EntityType="pokloni_model.Store.tblDirektor" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblKomentar" EntityType="pokloni_model.Store.tblKomentar" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblKupac" EntityType="pokloni_model.Store.tblKupac" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblLoginData" EntityType="pokloni_model.Store.tblLoginData" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblOsoba" EntityType="pokloni_model.Store.tblOsoba" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblPoklon" EntityType="pokloni_model.Store.tblPoklon" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblPoslovnica" EntityType="pokloni_model.Store.tblPoslovnica" store:Type="Tables" Schema="dbo" />
@@ -33,6 +34,18 @@
           <AssociationSet Name="FK_tblKupac_tblOsoba" Association="pokloni_model.Store.FK_tblKupac_tblOsoba">
             <End Role="tblOsoba" EntitySet="tblOsoba" />
             <End Role="tblKupac" EntitySet="tblKupac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLoginData_tblOsoba" Association="pokloni_model.Store.FK_tblLoginData_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblLoginData" EntitySet="tblLoginData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPoklon_tblProdavač" Association="pokloni_model.Store.FK_tblPoklon_tblProdavač">
+            <End Role="tblProdavač" EntitySet="tblProdavač" />
+            <End Role="tblPoklon" EntitySet="tblPoklon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPoklon_tblProizvodjac" Association="pokloni_model.Store.FK_tblPoklon_tblProizvodjac">
+            <End Role="tblProizvodjac" EntitySet="tblProizvodjac" />
+            <End Role="tblPoklon" EntitySet="tblPoklon" />
           </AssociationSet>
           <AssociationSet Name="FK_tblProdavač_tblUposlenik" Association="pokloni_model.Store.FK_tblProdavač_tblUposlenik">
             <End Role="tblUposlenik" EntitySet="tblUposlenik" />
@@ -93,6 +106,15 @@
           <Property Name="kupac_id" Type="bigint" Nullable="false" />
           <Property Name="osoba_id" Type="bigint" />
         </EntityType>
+        <EntityType Name="tblLoginData">
+          <Key>
+            <PropertyRef Name="loginData_id" />
+          </Key>
+          <Property Name="loginData_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="nchar" Nullable="false" MaxLength="30" />
+          <Property Name="password" Type="nchar" Nullable="false" MaxLength="30" />
+          <Property Name="osoba" Type="bigint" />
+        </EntityType>
         <EntityType Name="tblOsoba">
           <Key>
             <PropertyRef Name="osoba_id" />
@@ -111,6 +133,9 @@
           <Property Name="cijena" Type="numeric" />
           <Property Name="slika" Type="nchar" Nullable="false" MaxLength="1000" />
           <Property Name="opis" Type="nchar" MaxLength="1000" />
+          <Property Name="prodao" Type="bigint" />
+          <Property Name="proizveo" Type="bigint" />
+          <Property Name="naziv" Type="nchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblPoslovnica">
           <Key>
@@ -141,7 +166,7 @@
           <Key>
             <PropertyRef Name="uposlenik_id" />
           </Key>
-          <Property Name="uposlenik_id" Type="bigint" Nullable="false" />
+          <Property Name="uposlenik_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="osoba_id" Type="bigint" Nullable="false" />
           <Property Name="broj_radne_knjizice" Type="bigint" Nullable="false" />
           <Property Name="datum_uposlenja" Type="date" Nullable="false" />
@@ -202,6 +227,42 @@
             </Principal>
             <Dependent Role="tblKupac">
               <PropertyRef Name="osoba_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLoginData_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="0..1" />
+          <End Role="tblLoginData" Type="pokloni_model.Store.tblLoginData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblLoginData">
+              <PropertyRef Name="osoba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPoklon_tblProdavač">
+          <End Role="tblProdavač" Type="pokloni_model.Store.tblProdavač" Multiplicity="0..1" />
+          <End Role="tblPoklon" Type="pokloni_model.Store.tblPoklon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProdavač">
+              <PropertyRef Name="prodavac_id" />
+            </Principal>
+            <Dependent Role="tblPoklon">
+              <PropertyRef Name="prodao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPoklon_tblProizvodjac">
+          <End Role="tblProizvodjac" Type="pokloni_model.Store.tblProizvodjac" Multiplicity="0..1" />
+          <End Role="tblPoklon" Type="pokloni_model.Store.tblPoklon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProizvodjac">
+              <PropertyRef Name="proizvodjac_id" />
+            </Principal>
+            <Dependent Role="tblPoklon">
+              <PropertyRef Name="proizveo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -302,6 +363,19 @@
             <End Role="tblOsoba" EntitySet="tblOsoba" />
             <End Role="tblDirektor" EntitySet="tblDirektor" />
           </AssociationSet>
+          <EntitySet Name="tblLoginData" EntityType="pokloni_model.tblLoginData" />
+          <AssociationSet Name="FK_tblLoginData_tblOsoba" Association="pokloni_model.FK_tblLoginData_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblLoginData" EntitySet="tblLoginData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPoklon_tblProdavač" Association="pokloni_model.FK_tblPoklon_tblProdavač">
+            <End Role="tblProdavač" EntitySet="tblProdavač" />
+            <End Role="tblPoklon" EntitySet="tblPoklon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPoklon_tblProizvodjac" Association="pokloni_model.FK_tblPoklon_tblProizvodjac">
+            <End Role="tblProizvodjac" EntitySet="tblProizvodjac" />
+            <End Role="tblPoklon" EntitySet="tblPoklon" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -345,6 +419,7 @@
           <NavigationProperty Name="tblZahtjev" Relationship="pokloni_model.FK_tblZahtjev_tblOsoba" FromRole="tblOsoba" ToRole="tblZahtjev" />
           <NavigationProperty Name="Sesija" Relationship="pokloni_model.FK_Sesija_tblOsoba" FromRole="tblOsoba" ToRole="Sesija" />
           <NavigationProperty Name="tblDirektor" Relationship="pokloni_model.FK_tblDirektor_tblOsoba" FromRole="tblOsoba" ToRole="tblDirektor" />
+          <NavigationProperty Name="tblLoginData" Relationship="pokloni_model.FK_tblLoginData_tblOsoba" FromRole="tblOsoba" ToRole="tblLoginData" />
         </EntityType>
         <EntityType Name="tblPoklon">
           <Key>
@@ -354,6 +429,11 @@
           <Property Name="cijena" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="slika" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="true" />
           <Property Type="String" Name="opis" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Type="Int64" Name="prodao" />
+          <Property Type="Int64" Name="proizveo" />
+          <NavigationProperty Name="tblProdavač" Relationship="pokloni_model.FK_tblPoklon_tblProdavač" FromRole="tblPoklon" ToRole="tblProdavač" />
+          <NavigationProperty Name="tblProizvodjac" Relationship="pokloni_model.FK_tblPoklon_tblProizvodjac" FromRole="tblPoklon" ToRole="tblProizvodjac" />
+          <Property Type="String" Name="naziv" MaxLength="50" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="tblPoslovnica">
           <Key>
@@ -373,6 +453,7 @@
           <Property Name="poslovnica_id" Type="Int64" Nullable="false" />
           <Property Name="napomena" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
           <NavigationProperty Name="tblUposlenik" Relationship="pokloni_model.FK_tblProdavač_tblUposlenik" FromRole="tblProdavač" ToRole="tblUposlenik" />
+          <NavigationProperty Name="tblPoklon" Relationship="pokloni_model.FK_tblPoklon_tblProdavač" FromRole="tblProdavač" ToRole="tblPoklon" />
         </EntityType>
         <EntityType Name="tblProizvodjac">
           <Key>
@@ -381,6 +462,7 @@
           <Property Name="proizvodjac_id" Type="Int64" Nullable="false" />
           <Property Name="uposlenik_id" Type="Int64" Nullable="false" />
           <NavigationProperty Name="tblUposlenik" Relationship="pokloni_model.FK_tblProizvodjac_tblUposlenik" FromRole="tblProizvodjac" ToRole="tblUposlenik" />
+          <NavigationProperty Name="tblPoklon" Relationship="pokloni_model.FK_tblPoklon_tblProizvodjac" FromRole="tblProizvodjac" ToRole="tblPoklon" />
         </EntityType>
         <EntityType Name="tblUposlenik">
           <Key>
@@ -521,6 +603,52 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblLoginData">
+          <Key>
+            <PropertyRef Name="loginData_id" />
+          </Key>
+          <Property Type="Int64" Name="loginData_id" Nullable="false" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Type="Int64" Name="osoba" />
+          <NavigationProperty Name="tblOsoba" Relationship="pokloni_model.FK_tblLoginData_tblOsoba" FromRole="tblLoginData" ToRole="tblOsoba" />
+        </EntityType>
+        <Association Name="FK_tblLoginData_tblOsoba">
+          <End Type="pokloni_model.tblOsoba" Role="tblOsoba" Multiplicity="0..1" />
+          <End Type="pokloni_model.tblLoginData" Role="tblLoginData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblLoginData">
+              <PropertyRef Name="osoba" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPoklon_tblProdavač">
+          <End Type="pokloni_model.tblProdavač" Role="tblProdavač" Multiplicity="0..1" />
+          <End Type="pokloni_model.tblPoklon" Role="tblPoklon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProdavač">
+              <PropertyRef Name="prodavac_id" />
+            </Principal>
+            <Dependent Role="tblPoklon">
+              <PropertyRef Name="prodao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPoklon_tblProizvodjac">
+          <End Type="pokloni_model.tblProizvodjac" Role="tblProizvodjac" Multiplicity="0..1" />
+          <End Type="pokloni_model.tblPoklon" Role="tblPoklon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProizvodjac">
+              <PropertyRef Name="proizvodjac_id" />
+            </Principal>
+            <Dependent Role="tblPoklon">
+              <PropertyRef Name="proizveo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -569,6 +697,9 @@
           <EntitySetMapping Name="tblPoklon">
             <EntityTypeMapping TypeName="pokloni_model.tblPoklon">
               <MappingFragment StoreEntitySet="tblPoklon">
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="proizveo" ColumnName="proizveo" />
+                <ScalarProperty Name="prodao" ColumnName="prodao" />
                 <ScalarProperty Name="opis" ColumnName="opis" />
                 <ScalarProperty Name="poklon_id" ColumnName="poklon_id" />
                 <ScalarProperty Name="cijena" ColumnName="cijena" />
@@ -642,6 +773,16 @@
               <MappingFragment StoreEntitySet="tblDirektor">
                 <ScalarProperty Name="uposlenik_id" ColumnName="uposlenik_id" />
                 <ScalarProperty Name="direktor_id" ColumnName="direktor_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoginData">
+            <EntityTypeMapping TypeName="pokloni_model.tblLoginData">
+              <MappingFragment StoreEntitySet="tblLoginData">
+                <ScalarProperty Name="osoba" ColumnName="osoba" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="loginData_id" ColumnName="loginData_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
