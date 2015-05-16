@@ -22,6 +22,12 @@ namespace pokloni
         public Window2()
         {
             InitializeComponent();
+            DataContext = new pokloni.ViewModel1.ProdavacFormaViewModel();
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            Slanje.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }
