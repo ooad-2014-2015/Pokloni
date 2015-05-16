@@ -27,10 +27,10 @@ namespace pokloni.ViewModel1 {
             try {
                 ajdin_connection db = new ajdin_connection();
                 var ld = db.tblLoginData.First(l => l.username == Username && l.password == userPassword);
-                if(ld.tblOsoba.je_zensko)
+              /*  if(ld.tblOsoba.je_zensko)
                     global::System.Windows.MessageBox.Show(string.Format("Dobro dosla, {0}", ld.tblOsoba.ime.TrimEnd(' ')));
                 else
-                    global::System.Windows.MessageBox.Show(string.Format("Dobro dosao, {0}e", ld.tblOsoba.ime.TrimEnd(' ')));
+                    global::System.Windows.MessageBox.Show(string.Format("Dobro dosao, {0}e", ld.tblOsoba.ime.TrimEnd(' ')));*/
 
                 Window nextWindow = null;
 
@@ -48,8 +48,8 @@ namespace pokloni.ViewModel1 {
 
                 
             }
-            catch (Exception) {
-                global::System.Windows.MessageBox.Show("Pogresna kombinacija. Molimo pokušajte ponovo");
+            catch (Exception e) {
+                global::System.Windows.MessageBox.Show("Pogresna kombinacija. Molimo pokušajte ponovo\n" + e.Message);
                 Username = "";
                 (param as PasswordBox).Password = "";                
             }

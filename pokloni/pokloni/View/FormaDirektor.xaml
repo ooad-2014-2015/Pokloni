@@ -1,15 +1,32 @@
 ﻿<Window x:Class="pokloni.Window1"
+        xmlns:custom ="clr-namespace:MultivariableMetricVisualisation;assembly=MultivariableMetricVisualisation"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Forma Direktor" Height="550.176" Width="575.618">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="533" VerticalAlignment="Top" Width="676" Margin="0,0,-108,-13">
+        <TabControl Name="tabCtrl" HorizontalAlignment="Left" Height="533" VerticalAlignment="Top" Width="676" Margin="0,-5,-108,-8">
             <TabItem Header="Desktop">
-                <Label Margin="25,10,506,462">Dobro došli, direktore</Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="250*"/>
+                        <ColumnDefinition Width="321*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="458*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Dobro došli direktore" Margin="10,8,175,7" Grid.ColumnSpan="3"/>
+                    <Label Content="Ima" Margin="0,20,15,403" Grid.Row="1"/>
+                    <Label Content="{Binding Path=Komentari.Count, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" Margin="25,20,0,403" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Label Content="novih komentara o uposlenicima" Margin="40,20,105,403" Grid.Row="1" Grid.ColumnSpan="3"/>
+                    <Button Content="Pogledaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="130,25,0,0" Grid.Row="1" Click="Button_Click" Grid.Column="2"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Katalog" Margin="-3,-2,-1,-1">
                 <Grid Background="#FFE5E5E5" RenderTransformOrigin="0.5,0.5" Margin="0,0,106,8">
-                    
+
                     <GroupBox Header="Novi poklon" HorizontalAlignment="Left" Height="213" Margin="5,1,0,0" VerticalAlignment="Top" Width="546">
                         <Grid HorizontalAlignment="Left" Height="186" Margin="0,8,-2,0" VerticalAlignment="Top" Width="257">
                             <Label Content="Ime poklona:" HorizontalAlignment="Left" Height="24" Margin="10,20,0,0" VerticalAlignment="Top" Width="85"/>
@@ -31,15 +48,36 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="Feedback">
-                <Grid Background="#FFE5E5E5"/>
+                <DataGrid AutoGenerateColumns="False" DataContext="{Binding Path=Komentari}" ItemsSource="{Binding}" CanUserAddRows="False" Margin="5,9,214,121">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=tekst}" Header="Tekst" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=tblOsoba.ime}" Header="Komentarisao" IsReadOnly="True"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </TabItem>
             <TabItem Header="Stanje zaliha">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="White">
+                </Grid>
             </TabItem>
             <TabItem Header="Uposlenici">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5" Margin="-2,4,0,-4" HorizontalAlignment="Left" Width="666">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="53*"/>
+                        <RowDefinition Height="448*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid AutoGenerateColumns="False" SelectedValue="{Binding Path=Selektovani, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Path=Uposlenici}" ItemsSource="{Binding}" CanUserAddRows="False" Margin="5,0,411,73" Grid.RowSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="Ime" Binding="{Binding Path=tblOsoba.ime}" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prezime" Binding="{Binding Path=tblOsoba.prezime}" IsReadOnly="True"></DataGridTextColumn>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <ContentControl Name="cc" HorizontalAlignment="Left" Height="275" Margin="262,39,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="285">
+                        <ContentControl Content="ContentControl" HorizontalAlignment="Left" Height="290" VerticalAlignment="Top" Width="230" Margin="-40,-15,0,-80"/>
+                    </ContentControl>
+                </Grid>
             </TabItem>
-            
+
         </TabControl>
 
 
