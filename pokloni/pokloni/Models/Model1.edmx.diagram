@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1416f296116a4594be79d7eb4285cc01" Name="Diagram1">
+        <EntityTypeShape EntityType="pokloni_model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblKomentar" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblKupac" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblOsoba" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblPoklon" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblPoslovnica" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblProdavač" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblProizvodjac" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblUposlenik" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pokloni_model.tblZahtjev" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <AssociationConnector Association="pokloni_model.FK_tblKomentar_tblOsoba" ManuallyRouted="false" />
+        <AssociationConnector Association="pokloni_model.FK_tblKupac_tblOsoba" ManuallyRouted="false" />
+        <AssociationConnector Association="pokloni_model.FK_tblUposlenik_tblOsoba" ManuallyRouted="false" />
+        <AssociationConnector Association="pokloni_model.FK_tblZahtjev_tblOsoba" ManuallyRouted="false" />
+        <AssociationConnector Association="pokloni_model.FK_tblProdavač_tblUposlenik" ManuallyRouted="false" />
+        <AssociationConnector Association="pokloni_model.FK_tblProizvodjac_tblUposlenik" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

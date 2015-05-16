@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="pokloni_model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="pokloni_modelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="pokloni_model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblKomentar" EntityType="pokloni_model.Store.tblKomentar" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblKupac" EntityType="pokloni_model.Store.tblKupac" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblOsoba" EntityType="pokloni_model.Store.tblOsoba" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPoklon" EntityType="pokloni_model.Store.tblPoklon" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPoslovnica" EntityType="pokloni_model.Store.tblPoslovnica" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblProdavač" EntityType="pokloni_model.Store.tblProdavač" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblProizvodjac" EntityType="pokloni_model.Store.tblProizvodjac" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUposlenik" EntityType="pokloni_model.Store.tblUposlenik" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblZahtjev" EntityType="pokloni_model.Store.tblZahtjev" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tblKomentar_tblOsoba" Association="pokloni_model.Store.FK_tblKomentar_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblKomentar" EntitySet="tblKomentar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblKupac_tblOsoba" Association="pokloni_model.Store.FK_tblKupac_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblKupac" EntitySet="tblKupac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProdavač_tblUposlenik" Association="pokloni_model.Store.FK_tblProdavač_tblUposlenik">
+            <End Role="tblUposlenik" EntitySet="tblUposlenik" />
+            <End Role="tblProdavač" EntitySet="tblProdavač" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProizvodjac_tblUposlenik" Association="pokloni_model.Store.FK_tblProizvodjac_tblUposlenik">
+            <End Role="tblUposlenik" EntitySet="tblUposlenik" />
+            <End Role="tblProizvodjac" EntitySet="tblProizvodjac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUposlenik_tblOsoba" Association="pokloni_model.Store.FK_tblUposlenik_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblUposlenik" EntitySet="tblUposlenik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblZahtjev_tblOsoba" Association="pokloni_model.Store.FK_tblZahtjev_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblZahtjev" EntitySet="tblZahtjev" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tblKomentar">
+          <Key>
+            <PropertyRef Name="komentar_id" />
+          </Key>
+          <Property Name="komentar_id" Type="bigint" Nullable="false" />
+          <Property Name="kreator" Type="bigint" />
+          <Property Name="tekst" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblKupac">
+          <Key>
+            <PropertyRef Name="kupac_id" />
+          </Key>
+          <Property Name="kupac_id" Type="bigint" Nullable="false" />
+          <Property Name="osoba_id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblOsoba">
+          <Key>
+            <PropertyRef Name="osoba_id" />
+          </Key>
+          <Property Name="osoba_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="nchar" MaxLength="20" />
+          <Property Name="prezime" Type="nchar" Nullable="false" MaxLength="30" />
+          <Property Name="je_zensko" Type="bit" Nullable="false" />
+          <Property Name="email" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblPoklon">
+          <Key>
+            <PropertyRef Name="poklon_id" />
+          </Key>
+          <Property Name="poklon_id" Type="bigint" Nullable="false" />
+          <Property Name="cijena" Type="numeric" />
+          <Property Name="slika" Type="nchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="tblPoslovnica">
+          <Key>
+            <PropertyRef Name="poslovnica_id" />
+          </Key>
+          <Property Name="poslovnica_id" Type="bigint" Nullable="false" />
+          <Property Name="vrijeme_otvaranja_dnevno" Type="datetime" />
+          <Property Name="vrijeme_zatvaranja_dnevno" Type="datetime" />
+          <Property Name="vrijeme_otvaranja_poslovnice" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblProdavač">
+          <Key>
+            <PropertyRef Name="prodavac_id" />
+          </Key>
+          <Property Name="prodavac_id" Type="bigint" Nullable="false" />
+          <Property Name="uposlenik_id" Type="bigint" Nullable="false" />
+          <Property Name="poslovnica_id" Type="bigint" Nullable="false" />
+          <Property Name="napomena" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblProizvodjac">
+          <Key>
+            <PropertyRef Name="proizvodjac_id" />
+          </Key>
+          <Property Name="proizvodjac_id" Type="bigint" Nullable="false" />
+          <Property Name="uposlenik_id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUposlenik">
+          <Key>
+            <PropertyRef Name="uposlenik_id" />
+          </Key>
+          <Property Name="uposlenik_id" Type="bigint" Nullable="false" />
+          <Property Name="osoba_id" Type="bigint" Nullable="false" />
+          <Property Name="broj_radne_knjizice" Type="bigint" Nullable="false" />
+          <Property Name="datum_uposlenja" Type="date" Nullable="false" />
+          <Property Name="plata" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="dodatak_na_platu" Type="numeric" />
+        </EntityType>
+        <EntityType Name="tblZahtjev">
+          <Key>
+            <PropertyRef Name="zahtjev_id" />
+          </Key>
+          <Property Name="zahtjev_id" Type="bigint" Nullable="false" />
+          <Property Name="kreator" Type="bigint" />
+          <Property Name="vrijeme_kreiranja" Type="date" Nullable="false" />
+          <Property Name="je_obradjen" Type="bit" />
+        </EntityType>
+        <Association Name="FK_tblKomentar_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="0..1" />
+          <End Role="tblKomentar" Type="pokloni_model.Store.tblKomentar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblKomentar">
+              <PropertyRef Name="kreator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblKupac_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="0..1" />
+          <End Role="tblKupac" Type="pokloni_model.Store.tblKupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblKupac">
+              <PropertyRef Name="osoba_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProdavač_tblUposlenik">
+          <End Role="tblUposlenik" Type="pokloni_model.Store.tblUposlenik" Multiplicity="1" />
+          <End Role="tblProdavač" Type="pokloni_model.Store.tblProdavač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUposlenik">
+              <PropertyRef Name="uposlenik_id" />
+            </Principal>
+            <Dependent Role="tblProdavač">
+              <PropertyRef Name="uposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProizvodjac_tblUposlenik">
+          <End Role="tblUposlenik" Type="pokloni_model.Store.tblUposlenik" Multiplicity="1" />
+          <End Role="tblProizvodjac" Type="pokloni_model.Store.tblProizvodjac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUposlenik">
+              <PropertyRef Name="uposlenik_id" />
+            </Principal>
+            <Dependent Role="tblProizvodjac">
+              <PropertyRef Name="uposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUposlenik_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="1" />
+          <End Role="tblUposlenik" Type="pokloni_model.Store.tblUposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblUposlenik">
+              <PropertyRef Name="osoba_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblZahtjev_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="0..1" />
+          <End Role="tblZahtjev" Type="pokloni_model.Store.tblZahtjev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblZahtjev">
+              <PropertyRef Name="kreator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pokloni_model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ajdin_connection" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="pokloni_model.sysdiagrams" />
+          <EntitySet Name="tblKomentar" EntityType="pokloni_model.tblKomentar" />
+          <EntitySet Name="tblKupac" EntityType="pokloni_model.tblKupac" />
+          <EntitySet Name="tblOsoba" EntityType="pokloni_model.tblOsoba" />
+          <EntitySet Name="tblPoklon" EntityType="pokloni_model.tblPoklon" />
+          <EntitySet Name="tblPoslovnica" EntityType="pokloni_model.tblPoslovnica" />
+          <EntitySet Name="tblProdavač" EntityType="pokloni_model.tblProdavač" />
+          <EntitySet Name="tblProizvodjac" EntityType="pokloni_model.tblProizvodjac" />
+          <EntitySet Name="tblUposlenik" EntityType="pokloni_model.tblUposlenik" />
+          <EntitySet Name="tblZahtjev" EntityType="pokloni_model.tblZahtjev" />
+          <AssociationSet Name="FK_tblKomentar_tblOsoba" Association="pokloni_model.FK_tblKomentar_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblKomentar" EntitySet="tblKomentar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblKupac_tblOsoba" Association="pokloni_model.FK_tblKupac_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblKupac" EntitySet="tblKupac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUposlenik_tblOsoba" Association="pokloni_model.FK_tblUposlenik_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblUposlenik" EntitySet="tblUposlenik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblZahtjev_tblOsoba" Association="pokloni_model.FK_tblZahtjev_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblZahtjev" EntitySet="tblZahtjev" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProdavač_tblUposlenik" Association="pokloni_model.FK_tblProdavač_tblUposlenik">
+            <End Role="tblUposlenik" EntitySet="tblUposlenik" />
+            <End Role="tblProdavač" EntitySet="tblProdavač" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProizvodjac_tblUposlenik" Association="pokloni_model.FK_tblProizvodjac_tblUposlenik">
+            <End Role="tblUposlenik" EntitySet="tblUposlenik" />
+            <End Role="tblProizvodjac" EntitySet="tblProizvodjac" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblKomentar">
+          <Key>
+            <PropertyRef Name="komentar_id" />
+          </Key>
+          <Property Name="komentar_id" Type="Int64" Nullable="false" />
+          <Property Name="kreator" Type="Int64" />
+          <Property Name="tekst" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblOsoba" Relationship="pokloni_model.FK_tblKomentar_tblOsoba" FromRole="tblKomentar" ToRole="tblOsoba" />
+        </EntityType>
+        <EntityType Name="tblKupac">
+          <Key>
+            <PropertyRef Name="kupac_id" />
+          </Key>
+          <Property Name="kupac_id" Type="Int64" Nullable="false" />
+          <Property Name="osoba_id" Type="Int64" />
+          <NavigationProperty Name="tblOsoba" Relationship="pokloni_model.FK_tblKupac_tblOsoba" FromRole="tblKupac" ToRole="tblOsoba" />
+        </EntityType>
+        <EntityType Name="tblOsoba">
+          <Key>
+            <PropertyRef Name="osoba_id" />
+          </Key>
+          <Property Name="osoba_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="prezime" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="true" />
+          <Property Name="je_zensko" Type="Boolean" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="tblKomentar" Relationship="pokloni_model.FK_tblKomentar_tblOsoba" FromRole="tblOsoba" ToRole="tblKomentar" />
+          <NavigationProperty Name="tblKupac" Relationship="pokloni_model.FK_tblKupac_tblOsoba" FromRole="tblOsoba" ToRole="tblKupac" />
+          <NavigationProperty Name="tblUposlenik" Relationship="pokloni_model.FK_tblUposlenik_tblOsoba" FromRole="tblOsoba" ToRole="tblUposlenik" />
+          <NavigationProperty Name="tblZahtjev" Relationship="pokloni_model.FK_tblZahtjev_tblOsoba" FromRole="tblOsoba" ToRole="tblZahtjev" />
+        </EntityType>
+        <EntityType Name="tblPoklon">
+          <Key>
+            <PropertyRef Name="poklon_id" />
+          </Key>
+          <Property Name="poklon_id" Type="Int64" Nullable="false" />
+          <Property Name="cijena" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="slika" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="tblPoslovnica">
+          <Key>
+            <PropertyRef Name="poslovnica_id" />
+          </Key>
+          <Property Name="poslovnica_id" Type="Int64" Nullable="false" />
+          <Property Name="vrijeme_otvaranja_dnevno" Type="DateTime" Precision="3" />
+          <Property Name="vrijeme_zatvaranja_dnevno" Type="DateTime" Precision="3" />
+          <Property Name="vrijeme_otvaranja_poslovnice" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblProdavač">
+          <Key>
+            <PropertyRef Name="prodavac_id" />
+          </Key>
+          <Property Name="prodavac_id" Type="Int64" Nullable="false" />
+          <Property Name="uposlenik_id" Type="Int64" Nullable="false" />
+          <Property Name="poslovnica_id" Type="Int64" Nullable="false" />
+          <Property Name="napomena" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="tblUposlenik" Relationship="pokloni_model.FK_tblProdavač_tblUposlenik" FromRole="tblProdavač" ToRole="tblUposlenik" />
+        </EntityType>
+        <EntityType Name="tblProizvodjac">
+          <Key>
+            <PropertyRef Name="proizvodjac_id" />
+          </Key>
+          <Property Name="proizvodjac_id" Type="Int64" Nullable="false" />
+          <Property Name="uposlenik_id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tblUposlenik" Relationship="pokloni_model.FK_tblProizvodjac_tblUposlenik" FromRole="tblProizvodjac" ToRole="tblUposlenik" />
+        </EntityType>
+        <EntityType Name="tblUposlenik">
+          <Key>
+            <PropertyRef Name="uposlenik_id" />
+          </Key>
+          <Property Name="uposlenik_id" Type="Int64" Nullable="false" />
+          <Property Name="osoba_id" Type="Int64" Nullable="false" />
+          <Property Name="broj_radne_knjizice" Type="Int64" Nullable="false" />
+          <Property Name="datum_uposlenja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="plata" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="dodatak_na_platu" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="tblOsoba" Relationship="pokloni_model.FK_tblUposlenik_tblOsoba" FromRole="tblUposlenik" ToRole="tblOsoba" />
+          <NavigationProperty Name="tblProdavač" Relationship="pokloni_model.FK_tblProdavač_tblUposlenik" FromRole="tblUposlenik" ToRole="tblProdavač" />
+          <NavigationProperty Name="tblProizvodjac" Relationship="pokloni_model.FK_tblProizvodjac_tblUposlenik" FromRole="tblUposlenik" ToRole="tblProizvodjac" />
+        </EntityType>
+        <EntityType Name="tblZahtjev">
+          <Key>
+            <PropertyRef Name="zahtjev_id" />
+          </Key>
+          <Property Name="zahtjev_id" Type="Int64" Nullable="false" />
+          <Property Name="kreator" Type="Int64" />
+          <Property Name="vrijeme_kreiranja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="je_obradjen" Type="Boolean" />
+          <NavigationProperty Name="tblOsoba" Relationship="pokloni_model.FK_tblZahtjev_tblOsoba" FromRole="tblZahtjev" ToRole="tblOsoba" />
+        </EntityType>
+        <Association Name="FK_tblKomentar_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.tblOsoba" Multiplicity="0..1" />
+          <End Role="tblKomentar" Type="pokloni_model.tblKomentar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblKomentar">
+              <PropertyRef Name="kreator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblKupac_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.tblOsoba" Multiplicity="0..1" />
+          <End Role="tblKupac" Type="pokloni_model.tblKupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblKupac">
+              <PropertyRef Name="osoba_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUposlenik_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.tblOsoba" Multiplicity="1" />
+          <End Role="tblUposlenik" Type="pokloni_model.tblUposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblUposlenik">
+              <PropertyRef Name="osoba_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblZahtjev_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.tblOsoba" Multiplicity="0..1" />
+          <End Role="tblZahtjev" Type="pokloni_model.tblZahtjev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblZahtjev">
+              <PropertyRef Name="kreator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProdavač_tblUposlenik">
+          <End Role="tblUposlenik" Type="pokloni_model.tblUposlenik" Multiplicity="1" />
+          <End Role="tblProdavač" Type="pokloni_model.tblProdavač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUposlenik">
+              <PropertyRef Name="uposlenik_id" />
+            </Principal>
+            <Dependent Role="tblProdavač">
+              <PropertyRef Name="uposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProizvodjac_tblUposlenik">
+          <End Role="tblUposlenik" Type="pokloni_model.tblUposlenik" Multiplicity="1" />
+          <End Role="tblProizvodjac" Type="pokloni_model.tblProizvodjac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUposlenik">
+              <PropertyRef Name="uposlenik_id" />
+            </Principal>
+            <Dependent Role="tblProizvodjac">
+              <PropertyRef Name="uposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pokloni_modelStoreContainer" CdmEntityContainer="ajdin_connection">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="pokloni_model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblKomentar">
+            <EntityTypeMapping TypeName="pokloni_model.tblKomentar">
+              <MappingFragment StoreEntitySet="tblKomentar">
+                <ScalarProperty Name="komentar_id" ColumnName="komentar_id" />
+                <ScalarProperty Name="kreator" ColumnName="kreator" />
+                <ScalarProperty Name="tekst" ColumnName="tekst" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblKupac">
+            <EntityTypeMapping TypeName="pokloni_model.tblKupac">
+              <MappingFragment StoreEntitySet="tblKupac">
+                <ScalarProperty Name="kupac_id" ColumnName="kupac_id" />
+                <ScalarProperty Name="osoba_id" ColumnName="osoba_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOsoba">
+            <EntityTypeMapping TypeName="pokloni_model.tblOsoba">
+              <MappingFragment StoreEntitySet="tblOsoba">
+                <ScalarProperty Name="osoba_id" ColumnName="osoba_id" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="je_zensko" ColumnName="je_zensko" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPoklon">
+            <EntityTypeMapping TypeName="pokloni_model.tblPoklon">
+              <MappingFragment StoreEntitySet="tblPoklon">
+                <ScalarProperty Name="poklon_id" ColumnName="poklon_id" />
+                <ScalarProperty Name="cijena" ColumnName="cijena" />
+                <ScalarProperty Name="slika" ColumnName="slika" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPoslovnica">
+            <EntityTypeMapping TypeName="pokloni_model.tblPoslovnica">
+              <MappingFragment StoreEntitySet="tblPoslovnica">
+                <ScalarProperty Name="poslovnica_id" ColumnName="poslovnica_id" />
+                <ScalarProperty Name="vrijeme_otvaranja_dnevno" ColumnName="vrijeme_otvaranja_dnevno" />
+                <ScalarProperty Name="vrijeme_zatvaranja_dnevno" ColumnName="vrijeme_zatvaranja_dnevno" />
+                <ScalarProperty Name="vrijeme_otvaranja_poslovnice" ColumnName="vrijeme_otvaranja_poslovnice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProdavač">
+            <EntityTypeMapping TypeName="pokloni_model.tblProdavač">
+              <MappingFragment StoreEntitySet="tblProdavač">
+                <ScalarProperty Name="prodavac_id" ColumnName="prodavac_id" />
+                <ScalarProperty Name="uposlenik_id" ColumnName="uposlenik_id" />
+                <ScalarProperty Name="poslovnica_id" ColumnName="poslovnica_id" />
+                <ScalarProperty Name="napomena" ColumnName="napomena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProizvodjac">
+            <EntityTypeMapping TypeName="pokloni_model.tblProizvodjac">
+              <MappingFragment StoreEntitySet="tblProizvodjac">
+                <ScalarProperty Name="proizvodjac_id" ColumnName="proizvodjac_id" />
+                <ScalarProperty Name="uposlenik_id" ColumnName="uposlenik_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUposlenik">
+            <EntityTypeMapping TypeName="pokloni_model.tblUposlenik">
+              <MappingFragment StoreEntitySet="tblUposlenik">
+                <ScalarProperty Name="uposlenik_id" ColumnName="uposlenik_id" />
+                <ScalarProperty Name="osoba_id" ColumnName="osoba_id" />
+                <ScalarProperty Name="broj_radne_knjizice" ColumnName="broj_radne_knjizice" />
+                <ScalarProperty Name="datum_uposlenja" ColumnName="datum_uposlenja" />
+                <ScalarProperty Name="plata" ColumnName="plata" />
+                <ScalarProperty Name="dodatak_na_platu" ColumnName="dodatak_na_platu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblZahtjev">
+            <EntityTypeMapping TypeName="pokloni_model.tblZahtjev">
+              <MappingFragment StoreEntitySet="tblZahtjev">
+                <ScalarProperty Name="zahtjev_id" ColumnName="zahtjev_id" />
+                <ScalarProperty Name="kreator" ColumnName="kreator" />
+                <ScalarProperty Name="vrijeme_kreiranja" ColumnName="vrijeme_kreiranja" />
+                <ScalarProperty Name="je_obradjen" ColumnName="je_obradjen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
