@@ -13,10 +13,10 @@ namespace pokloni.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ajdin_connection : DbContext
+    public partial class database_entities : DbContext
     {
-        public ajdin_connection()
-            : base("name=ajdin_connection")
+        public database_entities()
+            : base("name=database_entities")
         {
         }
     
