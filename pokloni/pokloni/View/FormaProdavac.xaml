@@ -6,19 +6,19 @@
         <TabControl HorizontalAlignment="Left" Height="292" VerticalAlignment="Top" Width="568">
             <TabItem Header="Prodaja" Height="23" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">
-                    <ComboBox Name="OdabirPoklonaProdaja" HorizontalAlignment="Left" Height="26" Margin="198,10,0,0" VerticalAlignment="Top" Width="293"/>
+                    <ComboBox Text="{Binding Path=imePoklona, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="OdabirPoklonaProdaja" HorizontalAlignment="Left" Height="26" Margin="198,10,0,0" VerticalAlignment="Top" Width="293" ItemsSource="{Binding Path=imenaPoklona}"/>
                     <Label Content="Odaberite poklon:" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="183"/>
                     <Label Content="Količina:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.13,2.046" Margin="10,41,0,0"/>
-                    <ComboBox Name ="KolicinaProdaja" HorizontalAlignment="Left" Height="26" Margin="91,41,0,0" VerticalAlignment="Top" Width="78"/>
+                    <ComboBox Text="{Binding Path=kolicina, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name ="KolicinaProdaja" HorizontalAlignment="Left" Height="26" Margin="91,41,0,0" VerticalAlignment="Top" Width="78"/>
                     <GroupBox Header="Način preuzimanja" HorizontalAlignment="Left" Height="58" Margin="10,72,0,0" VerticalAlignment="Top" Width="272">
                         <Grid HorizontalAlignment="Left" Height="40" Margin="0,0,-12,-4" VerticalAlignment="Top" Width="272">
                             <RadioButton Content="Lično" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0" VerticalAlignment="Top" Width="119"/>
-                            <RadioButton Content="Slanje na adresu" HorizontalAlignment="Left" Height="20" Margin="140,10,0,0" VerticalAlignment="Top" Width="122"/>
+                            <RadioButton Content="Slanje na adresu" HorizontalAlignment="Left" Height="20" Margin="140,10,0,0" VerticalAlignment="Top" Width="122" Checked="RadioButton_Checked_1"/>
 
                         </Grid>
 
                     </GroupBox>
-                    <GroupBox Header="Slanje na adresu" HorizontalAlignment="Left" Height="112" Margin="10,135,0,0" VerticalAlignment="Top" Width="272">
+                    <GroupBox Name="Slanje" Header="Slanje na adresu" HorizontalAlignment="Left" Height="112" Margin="10,135,0,0" VerticalAlignment="Top" Width="272" Visibility="Hidden">
                         <Grid HorizontalAlignment="Left" Height="92" Margin="0,0,-8,-2" VerticalAlignment="Top" Width="268">
                             <Label Content="Ime:" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="65"/>
                             <TextBox Name ="ImeKupca" HorizontalAlignment="Left" Height="26" Margin="80,10,0,0" TextWrapping="Wrap" Text="Unesite ime" VerticalAlignment="Top" Width="178"/>
@@ -32,7 +32,7 @@
                     <TextBox Name ="DodatneNapomeneProdaja" HorizontalAlignment="Left" Height="141" Margin="294,82,0,0" TextWrapping="Wrap" Text="Unesite dodatne napomene" VerticalAlignment="Top" Width="254"/>
                     <Label Content="Dodatne napomene:" HorizontalAlignment="Left" Height="27" Margin="294,55,0,0" VerticalAlignment="Top" Width="138"/>
                     <CheckBox Name ="HitnoProdaja" Content="Hitna narudžba" HorizontalAlignment="Left" Height="29" Margin="294,228,0,0" VerticalAlignment="Top" Width="111"/>
-                    <Button Name ="GotovaProdaja" Content="Gotovo" HorizontalAlignment="Left" Height="26" Margin="491,226,0,0" VerticalAlignment="Top" Width="57"/>
+                    <Button Name ="GotovaProdaja" Content="Gotovo" HorizontalAlignment="Left" Height="26" Margin="491,226,0,0" VerticalAlignment="Top" Width="57" Command="{Binding Path=prodaja}"/>
 
                 </Grid>
             </TabItem>
