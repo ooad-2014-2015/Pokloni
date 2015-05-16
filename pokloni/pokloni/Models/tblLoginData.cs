@@ -12,19 +12,13 @@ namespace pokloni.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblProdavač
+    public partial class tblLoginData
     {
-        public tblProdavač()
-        {
-            this.tblPoklon = new HashSet<tblPoklon>();
-        }
+        public long loginData_id { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public Nullable<long> osoba { get; set; }
     
-        public long prodavac_id { get; set; }
-        public long uposlenik_id { get; set; }
-        public long poslovnica_id { get; set; }
-        public string napomena { get; set; }
-    
-        public virtual tblUposlenik tblUposlenik { get; set; }
-        public virtual ICollection<tblPoklon> tblPoklon { get; set; }
+        public virtual tblOsoba tblOsoba { get; set; }
     }
 }

@@ -25,6 +25,10 @@
         <EntityTypeShape EntityType="pokloni_model.tblDirektor" Width="1.5" PointX="10.062989237747615" PointY="24.037132915126687" />
         <AssociationConnector Association="pokloni_model.FK_Sesija_tblOsoba" />
         <AssociationConnector Association="pokloni_model.FK_tblDirektor_tblOsoba" />
+        <EntityTypeShape EntityType="pokloni_model.tblLoginData" Width="1.5" PointX="4.6070750265415175" PointY="20.021891111518205" />
+        <AssociationConnector Association="pokloni_model.FK_tblLoginData_tblOsoba" />
+        <AssociationConnector Association="pokloni_model.FK_tblPoklon_tblProdavač" />
+        <AssociationConnector Association="pokloni_model.FK_tblPoklon_tblProizvodjac" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
