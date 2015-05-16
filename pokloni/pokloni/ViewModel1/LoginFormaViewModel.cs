@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
-using pokloni.Models;
+using pokloni;
+using System.Windows;
 
 namespace pokloni.ViewModel1 {
     internal class LoginFormaViewModel : INotifyPropertyChanged {
@@ -30,7 +31,19 @@ namespace pokloni.ViewModel1 {
                     global::System.Windows.MessageBox.Show(string.Format("Dobro dosla, {0}", ld.tblOsoba.ime.TrimEnd(' ')));
                 else
                     global::System.Windows.MessageBox.Show(string.Format("Dobro dosao, {0}e", ld.tblOsoba.ime.TrimEnd(' ')));
-                
+
+                Window nextWindow = null;
+
+                if (ld.tblOsoba.tblDirektor.Count == 1) {
+                    nextWindow = new Window1(); 
+                }
+                if (db.tblProizvodjac.Count(p => p.tblUposlenik.osoba_id == ld.osoba) == 1) {
+                    nextWindow = new Proizvodjac();
+                }
+                if(nextWindow != null) 
+                    nextWindow.ShowDialog();
+                else
+                    global::System.Windows.MessageBox.Show("Under construction");
 
 
                 
