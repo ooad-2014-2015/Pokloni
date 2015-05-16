@@ -4,9 +4,11 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="pokloni_model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="pokloni_model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="pokloni_modelStoreContainer">
+          <EntitySet Name="Sesija" EntityType="pokloni_model.Store.Sesija" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="pokloni_model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDirektor" EntityType="pokloni_model.Store.tblDirektor" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblKomentar" EntityType="pokloni_model.Store.tblKomentar" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblKupac" EntityType="pokloni_model.Store.tblKupac" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblOsoba" EntityType="pokloni_model.Store.tblOsoba" store:Type="Tables" Schema="dbo" />
@@ -16,6 +18,14 @@
           <EntitySet Name="tblProizvodjac" EntityType="pokloni_model.Store.tblProizvodjac" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblUposlenik" EntityType="pokloni_model.Store.tblUposlenik" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblZahtjev" EntityType="pokloni_model.Store.tblZahtjev" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Sesija_tblOsoba" Association="pokloni_model.Store.FK_Sesija_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="Sesija" EntitySet="Sesija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDirektor_tblOsoba" Association="pokloni_model.Store.FK_tblDirektor_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblDirektor" EntitySet="tblDirektor" />
+          </AssociationSet>
           <AssociationSet Name="FK_tblKomentar_tblOsoba" Association="pokloni_model.Store.FK_tblKomentar_tblOsoba">
             <End Role="tblOsoba" EntitySet="tblOsoba" />
             <End Role="tblKomentar" EntitySet="tblKomentar" />
@@ -41,6 +51,16 @@
             <End Role="tblZahtjev" EntitySet="tblZahtjev" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Sesija">
+          <Key>
+            <PropertyRef Name="sesija_id" />
+          </Key>
+          <Property Name="sesija_id" Type="bigint" Nullable="false" />
+          <Property Name="vrijeme_kreiranja" Type="datetime" Nullable="false" />
+          <Property Name="vrijeme_zavrsetka" Type="datetime" />
+          <Property Name="je_aktivna" Type="bit" />
+          <Property Name="korisnik" Type="bigint" Nullable="false" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -50,6 +70,13 @@
           <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tblDirektor">
+          <Key>
+            <PropertyRef Name="direktor_id" />
+          </Key>
+          <Property Name="direktor_id" Type="bigint" Nullable="false" />
+          <Property Name="uposlenik_id" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblKomentar">
           <Key>
@@ -83,6 +110,7 @@
           <Property Name="poklon_id" Type="bigint" Nullable="false" />
           <Property Name="cijena" Type="numeric" />
           <Property Name="slika" Type="nchar" Nullable="false" MaxLength="1000" />
+          <Property Name="opis" Type="nchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="tblPoslovnica">
           <Key>
@@ -129,6 +157,30 @@
           <Property Name="vrijeme_kreiranja" Type="date" Nullable="false" />
           <Property Name="je_obradjen" Type="bit" />
         </EntityType>
+        <Association Name="FK_Sesija_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="1" />
+          <End Role="Sesija" Type="pokloni_model.Store.Sesija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="Sesija">
+              <PropertyRef Name="korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDirektor_tblOsoba">
+          <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="1" />
+          <End Role="tblDirektor" Type="pokloni_model.Store.tblDirektor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblDirektor">
+              <PropertyRef Name="uposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblKomentar_tblOsoba">
           <End Role="tblOsoba" Type="pokloni_model.Store.tblOsoba" Multiplicity="0..1" />
           <End Role="tblKomentar" Type="pokloni_model.Store.tblKomentar" Multiplicity="*" />
@@ -201,8 +253,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="pokloni_model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -240,6 +291,16 @@
           <AssociationSet Name="FK_tblProizvodjac_tblUposlenik" Association="pokloni_model.FK_tblProizvodjac_tblUposlenik">
             <End Role="tblUposlenik" EntitySet="tblUposlenik" />
             <End Role="tblProizvodjac" EntitySet="tblProizvodjac" />
+          </AssociationSet>
+          <EntitySet Name="Sesija" EntityType="pokloni_model.Sesija" />
+          <EntitySet Name="tblDirektor" EntityType="pokloni_model.tblDirektor" />
+          <AssociationSet Name="FK_Sesija_tblOsoba" Association="pokloni_model.FK_Sesija_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="Sesija" EntitySet="Sesija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDirektor_tblOsoba" Association="pokloni_model.FK_tblDirektor_tblOsoba">
+            <End Role="tblOsoba" EntitySet="tblOsoba" />
+            <End Role="tblDirektor" EntitySet="tblDirektor" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
@@ -282,6 +343,8 @@
           <NavigationProperty Name="tblKupac" Relationship="pokloni_model.FK_tblKupac_tblOsoba" FromRole="tblOsoba" ToRole="tblKupac" />
           <NavigationProperty Name="tblUposlenik" Relationship="pokloni_model.FK_tblUposlenik_tblOsoba" FromRole="tblOsoba" ToRole="tblUposlenik" />
           <NavigationProperty Name="tblZahtjev" Relationship="pokloni_model.FK_tblZahtjev_tblOsoba" FromRole="tblOsoba" ToRole="tblZahtjev" />
+          <NavigationProperty Name="Sesija" Relationship="pokloni_model.FK_Sesija_tblOsoba" FromRole="tblOsoba" ToRole="Sesija" />
+          <NavigationProperty Name="tblDirektor" Relationship="pokloni_model.FK_tblDirektor_tblOsoba" FromRole="tblOsoba" ToRole="tblDirektor" />
         </EntityType>
         <EntityType Name="tblPoklon">
           <Key>
@@ -290,6 +353,7 @@
           <Property Name="poklon_id" Type="Int64" Nullable="false" />
           <Property Name="cijena" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="slika" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="true" />
+          <Property Type="String" Name="opis" MaxLength="1000" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="tblPoslovnica">
           <Key>
@@ -414,6 +478,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Sesija">
+          <Key>
+            <PropertyRef Name="sesija_id" />
+          </Key>
+          <Property Type="Int64" Name="sesija_id" Nullable="false" />
+          <Property Type="DateTime" Name="vrijeme_kreiranja" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="vrijeme_zavrsetka" Precision="3" />
+          <Property Type="Boolean" Name="je_aktivna" />
+          <Property Type="Int64" Name="korisnik" Nullable="false" />
+          <NavigationProperty Name="tblOsoba" Relationship="pokloni_model.FK_Sesija_tblOsoba" FromRole="Sesija" ToRole="tblOsoba" />
+        </EntityType>
+        <EntityType Name="tblDirektor">
+          <Key>
+            <PropertyRef Name="direktor_id" />
+          </Key>
+          <Property Type="Int64" Name="direktor_id" Nullable="false" />
+          <Property Type="Int64" Name="uposlenik_id" Nullable="false" />
+          <NavigationProperty Name="tblOsoba" Relationship="pokloni_model.FK_tblDirektor_tblOsoba" FromRole="tblDirektor" ToRole="tblOsoba" />
+        </EntityType>
+        <Association Name="FK_Sesija_tblOsoba">
+          <End Type="pokloni_model.tblOsoba" Role="tblOsoba" Multiplicity="1" />
+          <End Type="pokloni_model.Sesija" Role="Sesija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="Sesija">
+              <PropertyRef Name="korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDirektor_tblOsoba">
+          <End Type="pokloni_model.tblOsoba" Role="tblOsoba" Multiplicity="1" />
+          <End Type="pokloni_model.tblDirektor" Role="tblDirektor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOsoba">
+              <PropertyRef Name="osoba_id" />
+            </Principal>
+            <Dependent Role="tblDirektor">
+              <PropertyRef Name="uposlenik_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -462,6 +569,7 @@
           <EntitySetMapping Name="tblPoklon">
             <EntityTypeMapping TypeName="pokloni_model.tblPoklon">
               <MappingFragment StoreEntitySet="tblPoklon">
+                <ScalarProperty Name="opis" ColumnName="opis" />
                 <ScalarProperty Name="poklon_id" ColumnName="poklon_id" />
                 <ScalarProperty Name="cijena" ColumnName="cijena" />
                 <ScalarProperty Name="slika" ColumnName="slika" />
@@ -515,6 +623,25 @@
                 <ScalarProperty Name="kreator" ColumnName="kreator" />
                 <ScalarProperty Name="vrijeme_kreiranja" ColumnName="vrijeme_kreiranja" />
                 <ScalarProperty Name="je_obradjen" ColumnName="je_obradjen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sesija">
+            <EntityTypeMapping TypeName="pokloni_model.Sesija">
+              <MappingFragment StoreEntitySet="Sesija">
+                <ScalarProperty Name="korisnik" ColumnName="korisnik" />
+                <ScalarProperty Name="je_aktivna" ColumnName="je_aktivna" />
+                <ScalarProperty Name="vrijeme_zavrsetka" ColumnName="vrijeme_zavrsetka" />
+                <ScalarProperty Name="vrijeme_kreiranja" ColumnName="vrijeme_kreiranja" />
+                <ScalarProperty Name="sesija_id" ColumnName="sesija_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDirektor">
+            <EntityTypeMapping TypeName="pokloni_model.tblDirektor">
+              <MappingFragment StoreEntitySet="tblDirektor">
+                <ScalarProperty Name="uposlenik_id" ColumnName="uposlenik_id" />
+                <ScalarProperty Name="direktor_id" ColumnName="direktor_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

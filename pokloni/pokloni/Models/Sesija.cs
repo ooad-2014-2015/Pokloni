@@ -12,11 +12,14 @@ namespace pokloni.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblPoklon
+    public partial class Sesija
     {
-        public long poklon_id { get; set; }
-        public Nullable<decimal> cijena { get; set; }
-        public string slika { get; set; }
-        public string opis { get; set; }
+        public long sesija_id { get; set; }
+        public System.DateTime vrijeme_kreiranja { get; set; }
+        public Nullable<System.DateTime> vrijeme_zavrsetka { get; set; }
+        public Nullable<bool> je_aktivna { get; set; }
+        public long korisnik { get; set; }
+    
+        public virtual tblOsoba tblOsoba { get; set; }
     }
 }

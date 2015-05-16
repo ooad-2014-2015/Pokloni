@@ -20,6 +20,8 @@ namespace pokloni.Models
             this.tblKupac = new HashSet<tblKupac>();
             this.tblUposlenik = new HashSet<tblUposlenik>();
             this.tblZahtjev = new HashSet<tblZahtjev>();
+            this.Sesija = new HashSet<Sesija>();
+            this.tblDirektor = new HashSet<tblDirektor>();
         }
     
         public long osoba_id { get; set; }
@@ -32,5 +34,7 @@ namespace pokloni.Models
         public virtual ICollection<tblKupac> tblKupac { get; set; }
         public virtual ICollection<tblUposlenik> tblUposlenik { get; set; }
         public virtual ICollection<tblZahtjev> tblZahtjev { get; set; }
+        public virtual ICollection<Sesija> Sesija { get; set; }
+        public virtual ICollection<tblDirektor> tblDirektor { get; set; }
     }
 }

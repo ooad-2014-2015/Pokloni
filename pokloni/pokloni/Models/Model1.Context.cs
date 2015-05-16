@@ -35,5 +35,7 @@ namespace pokloni.Models
         public DbSet<tblProizvodjac> tblProizvodjac { get; set; }
         public DbSet<tblUposlenik> tblUposlenik { get; set; }
         public DbSet<tblZahtjev> tblZahtjev { get; set; }
+        public DbSet<Sesija> Sesija { get; set; }
+        public DbSet<tblDirektor> tblDirektor { get; set; }
     }
 }
