@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using pokloni.ViewModel1;
-//using MultivariableMetricVisualisation;
+using MultivariableMetricVisualisation;
 
 namespace pokloni
 {
@@ -22,31 +22,39 @@ namespace pokloni
     public partial class Window1 : Window {
         public Window1() {
             InitializeComponent();
-            DataContext = new FormaDirektorViewModel();
-
-            //Visualizer uposlenikVisual = new Visualizer(6);
-
-            //uposlenikVisual.ActualAtrributes = generateNRandoms(6);
-
-            //uposlenikVisual.DrawMainPolygon();
-            //uposlenikVisual.DrawActualAttributes();
-
-            //cc.Content = uposlenikVisual;
-
-
-
+            DataContext = new FormaDirektorViewModel();  
         }
 
-        List<double> generateNRandoms(int n) {
-            Random r = new Random();
-            List<double> toReturn = new List<double>();
-            for (int i = 0; i < n; i++) {
-                toReturn.Add(r.NextDouble());
-            }
-            return toReturn;
-        }
         private void Button_Click(object sender, RoutedEventArgs e) {
             tabCtrl.SelectedIndex = 3;
+        }
+
+        private void ImePoklona_GotFocus(object sender, RoutedEventArgs e) {
+            if (ImePoklona.Text.Equals("Unesite ime poklona")) {
+                ImePoklona.Text = "";
+            }
+        }
+
+        private void ImePoklona_LostFocus(object sender, RoutedEventArgs e) {
+            if (ImePoklona.Text.Equals("")) {
+                ImePoklona.Text = "Unesite ime poklona";
+            }
+        }
+
+        private void OpisPoklona_GotFocus(object sender, RoutedEventArgs e) {
+            if (OpisPoklona.Text.Equals("Unesite opis poklona")) {
+                OpisPoklona.Text = "";
+            }
+        }
+
+        private void OpisPoklona_LostFocus(object sender, RoutedEventArgs e) {
+            if (OpisPoklona.Text.Equals("")) {
+                OpisPoklona.Text = "Unesite opis poklona";
+            }
+        }
+
+        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+
         }
 
     }

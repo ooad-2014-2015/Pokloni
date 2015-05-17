@@ -2,14 +2,14 @@
         xmlns:custom ="clr-namespace:MultivariableMetricVisualisation;assembly=MultivariableMetricVisualisation"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Forma Direktor" Height="550.176" Width="575.618">
+        Title="Forma Direktor" Height="691" Width="713.904">
     <Grid>
-        <TabControl Name="tabCtrl" HorizontalAlignment="Left" Height="533" VerticalAlignment="Top" Width="676" Margin="0,-5,-108,-8">
+        <TabControl Name="tabCtrl" Margin="0,0,11,11">
             <TabItem Header="Desktop">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="75*"/>
-                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20"/>
                         <ColumnDefinition Width="250*"/>
                         <ColumnDefinition Width="321*"/>
                     </Grid.ColumnDefinitions>
@@ -25,23 +25,43 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Katalog" Margin="-3,-2,-1,-1">
-                <Grid Background="#FFE5E5E5" RenderTransformOrigin="0.5,0.5" Margin="0,0,106,8">
+                <Grid Background="#FFE5E5E5" RenderTransformOrigin="0.5,0.5" Margin="0,0,7,8">
 
-                    <GroupBox Header="Novi poklon" HorizontalAlignment="Left" Height="213" Margin="5,1,0,0" VerticalAlignment="Top" Width="546">
+                    <GroupBox Header="Novi poklon" Height="234" Margin="5,1,122,0" VerticalAlignment="Top">
                         <Grid HorizontalAlignment="Left" Height="186" Margin="0,8,-2,0" VerticalAlignment="Top" Width="257">
                             <Label Content="Ime poklona:" HorizontalAlignment="Left" Height="24" Margin="10,20,0,0" VerticalAlignment="Top" Width="85"/>
                             <Label Content="Cijena:" HorizontalAlignment="Left" Height="34" Margin="10,49,0,0" VerticalAlignment="Top" Width="85"/>
-                            <TextBox Name ="ImePoklona" HorizontalAlignment="Left" Height="26" Margin="95,24,0,0" TextWrapping="Wrap" Text="Unesite ime poklona" VerticalAlignment="Top" Width="152"/>
-                            <Slider x:Name="CijenaSlide" HorizontalAlignment="Left" Height="28" Margin="100,55,0,0" VerticalAlignment="Top" Width="147" Maximum="50" Minimum="1" AutoToolTipPlacement="TopLeft"/>
+                            <TextBox Name ="ImePoklona" HorizontalAlignment="Left" Height="26" Margin="95,24,0,0" TextWrapping="Wrap" GotFocus="ImePoklona_GotFocus" LostFocus="ImePoklona_LostFocus" Text="{Binding Path=Temp.naziv}" VerticalAlignment="Top" Width="152"/>
+                            <Slider x:Name="CijenaSlide" HorizontalAlignment="Left" Height="28" Margin="100,55,0,0" VerticalAlignment="Top" Width="147" Maximum="50" Minimum="1" AutoToolTipPlacement="TopLeft" Value="{Binding Path=Temp.cijena}"/>
                             <Image HorizontalAlignment="Left" Height="175" Margin="273,1,-273,0" VerticalAlignment="Top" Width="257"></Image>
-                            <Label Content="Kliknite da unesete sliku" HorizontalAlignment="Left" Height="28" Margin="386,148,-265,0" VerticalAlignment="Top" Width="136"/>
-                            <Border Name="SlikaPoklona" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="175" Margin="273,1,-273,0" VerticalAlignment="Top" Width="257"/>
+                            <Label Content="Kliknite da unesete sliku" HorizontalAlignment="Left" Height="28" Margin="384,102,-263,0" VerticalAlignment="Top" Width="136"/>
+                            <Border Name="SlikaPoklona" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="149" Margin="272,-10,-272,0" VerticalAlignment="Top" Width="257"/>
                             <Label Content="Opis poklona:" HorizontalAlignment="Left" Height="28" Margin="10,83,0,0" VerticalAlignment="Top" Width="85"/>
-                            <TextBox Name ="OpisPoklona"  HorizontalAlignment="Left" Height="60" Margin="10,116,0,0" TextWrapping="Wrap" Text="Unesite opis poklona" VerticalAlignment="Top" Width="237" />
+                            <TextBox GotFocus="OpisPoklona_GotFocus" LostFocus="OpisPoklona_LostFocus" Name ="OpisPoklona"  HorizontalAlignment="Left" Height="60" Margin="10,116,0,0" TextWrapping="Wrap" Text="{Binding Path=Temp.opis, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="237" />
+                            <Button Content="Potvrdi" Command="{Binding Path=DodajPoklon}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="449,158,-267,0"/>
+                            <Button Content="Reset" Command="{Binding Path=Reset}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="359,158,-177,0"/>
 
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Pokloni" HorizontalAlignment="Left" Height="259" Margin="5,224,0,0" VerticalAlignment="Top" Width="545"/>
+                    <GroupBox Header="Pokloni" Margin="5,245,8,7">
+                        <DataGrid AutoGenerateColumns="False" DataContext ="{Binding Path=Pokloni}" ItemsSource="{Binding}" CanUserAddRows="False" Margin="5,5,-5,-4">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="Naziv"  Binding="{Binding Path=naziv}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Cijena (KM)" Binding="{Binding Path=cijena}"></DataGridTextColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Path=slika}" MaxHeight="50" MaxWidth="50"></Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTextColumn Header="Opis" Binding="{Binding Path=opis}"></DataGridTextColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Narudžbe">
@@ -55,7 +75,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
-            <TabItem Header="Stanje zaliha">
+            <TabItem Header="Stanje zaliha" Height="23" VerticalAlignment="Top">
                 <Grid Background="White">
                 </Grid>
             </TabItem>
@@ -65,15 +85,14 @@
                         <RowDefinition Height="53*"/>
                         <RowDefinition Height="448*"/>
                     </Grid.RowDefinitions>
-                    <DataGrid AutoGenerateColumns="False" SelectedValue="{Binding Path=Selektovani, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Path=Uposlenici}" ItemsSource="{Binding}" CanUserAddRows="False" Margin="5,0,411,73" Grid.RowSpan="2">
+                    <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding Path=Uposlenici}" SelectedItem="{Binding Path=Selektovani, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" CanUserAddRows="False" Margin="5,0,411,73" Grid.RowSpan="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn  Header="Ime" Binding="{Binding Path=tblOsoba.ime}" IsReadOnly="True"></DataGridTextColumn>
                             <DataGridTextColumn Header="Prezime" Binding="{Binding Path=tblOsoba.prezime}" IsReadOnly="True"></DataGridTextColumn>
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <ContentControl Name="cc" HorizontalAlignment="Left" Height="275" Margin="262,39,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="285">
-                        <ContentControl Content="ContentControl" HorizontalAlignment="Left" Height="290" VerticalAlignment="Top" Width="230" Margin="-40,-15,0,-80"/>
+                    <ContentControl Content="{Binding Path=UposlenikVisual, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="275" Margin="262,39,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="285">
                     </ContentControl>
                 </Grid>
             </TabItem>
