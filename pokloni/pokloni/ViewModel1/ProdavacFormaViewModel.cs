@@ -28,6 +28,9 @@ namespace pokloni.ViewModel1
                 
             prodaja = new RelayCommand(Prodaja);
             listaPoklona = new ObservableCollection<tblPoklon>(db.tblPoklon.ToList());
+
+            imenaPoklona = new ObservableCollection<string>();
+
             foreach (tblPoklon p in listaPoklona)
             {
                 imenaPoklona.Add(p.naziv);
