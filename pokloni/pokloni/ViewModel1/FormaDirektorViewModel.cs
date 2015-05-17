@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MultivariableMetricVisualisation;
+//using MultivariableMetricVisualisation;
 using System.ComponentModel;
 
 namespace pokloni.ViewModel1 {
@@ -14,7 +14,7 @@ namespace pokloni.ViewModel1 {
         public ObservableCollection<tblKomentar> Komentari { get; set; }
         public ObservableCollection<tblUposlenik> Uposlenici { get; set; }
         public tblUposlenik Selektovani { get; set; }
-        public Visualizer RadnikVisualizer { get; set; }
+       // public Visualizer RadnikVisualizer { get; set; }
 
         public FormaDirektorViewModel() {
 

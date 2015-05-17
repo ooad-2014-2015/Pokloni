@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using pokloni.ViewModel1;
-using MultivariableMetricVisualisation;
+//using MultivariableMetricVisualisation;
 
 namespace pokloni
 {
@@ -24,14 +24,14 @@ namespace pokloni
             InitializeComponent();
             DataContext = new FormaDirektorViewModel();
 
-            Visualizer uposlenikVisual = new Visualizer(6);
+            //Visualizer uposlenikVisual = new Visualizer(6);
 
-            uposlenikVisual.ActualAtrributes = generateNRandoms(6);
+            //uposlenikVisual.ActualAtrributes = generateNRandoms(6);
 
-            uposlenikVisual.DrawMainPolygon();
-            uposlenikVisual.DrawActualAttributes();
+            //uposlenikVisual.DrawMainPolygon();
+            //uposlenikVisual.DrawActualAttributes();
 
-            cc.Content = uposlenikVisual;
+            //cc.Content = uposlenikVisual;
 
 
 
