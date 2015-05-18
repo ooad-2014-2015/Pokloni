@@ -209,6 +209,14 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\cestitkaBB.jpg" />
+    <Resource Include="View\kovcegC.jpg" />
+    <Resource Include="View\tegla100C.jpg" />
+    <Resource Include="View\tegla100P.jpg" />
+    <Resource Include="View\tegla50C.jpg" />
+    <Resource Include="View\tegla50P.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

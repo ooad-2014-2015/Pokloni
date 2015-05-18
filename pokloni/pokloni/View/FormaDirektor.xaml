@@ -52,13 +52,12 @@
                                 <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Source="{Binding Path=slika}" MaxHeight="50" MaxWidth="50"></Image>
+                                            <Image Source="{Binding Path=slika}" Height="50" Width="50"></Image>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
 
                                 <DataGridTextColumn Header="Opis" Binding="{Binding Path=opis}"></DataGridTextColumn>
-
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
