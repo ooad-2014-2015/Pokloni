@@ -29,5 +29,9 @@ namespace pokloni
         {
             Slanje.Visibility = System.Windows.Visibility.Visible;
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

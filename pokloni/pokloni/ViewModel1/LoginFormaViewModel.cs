@@ -37,12 +37,12 @@ namespace pokloni.ViewModel1 {
                 if (ld.tblOsoba.tblDirektor.Count == 1) {
                     nextWindow = new Window1(); 
                 }
-                if (db.tblProizvodjac.Count(p => p.tblUposlenik.osoba_id == ld.osoba) == 1) {
-                    nextWindow = new Proizvodjac();
+                if (Username.Equals("iivona")) {
+                    nextWindow = new Window2();
                 }
                 if(nextWindow != null) 
                     nextWindow.ShowDialog();
-                else
+                else 
                     global::System.Windows.MessageBox.Show("Under construction");
 
 

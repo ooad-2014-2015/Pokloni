@@ -1,0 +1,985 @@
+<zuiprezi>
+  <version>7</version>
+  <zui-table>
+    <settings>
+      
+      <autoplay>
+        
+        <delay>4000</delay>
+        
+      </autoplay>
+      
+      <bounds x="-333338.571227869" y="-53024.95626687347" width="666677.142455738" height="106049.91253374694"/>
+      <aspectratio>off</aspectratio>
+      <languages>
+        <language>es</language>
+      </languages>
+      <mode type="normal"/>
+    </settings>
+    <object id="10" type="image" x="88044.54987833551" y="-6376.480027856739" r="0" s="1.6051993951693735">
+      <source w="1644" h="1121">3427333868<url>3427333868.jpg</url></source>
+      <sourceUrl>Untitled-1.jpg</sourceUrl>
+    <resource><id>3427333868</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/b/5/7/9fdcc8dbe067ade1492de40f0f3cd4f6ef0eb.jpg</url></resource></object>
+    <object id="34_142156774" type="text" x="-2.1667512612313772e-11" y="1.3542195382696108e-12" r="0" s="3314.8690608839092" class="body">
+      <height>31.9921875</height>
+      <width>-201.1171875</width>
+      <p>
+        <text><![CDATA[HVALA NA PAŽNJI!]]></text>
+      </p>
+    </object>
+    <object id="33_142156774" type="image" x="88080.8800959444" y="-9338.473898855627" r="0" s="0.7084275177191633">
+      <source w="826" h="425">3427499444<url>3427499444.jpg</url></source>
+      <sourceUrl>igrica%20class.jpg</sourceUrl>
+    <resource><id>3427499444</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/e/6/7/802f3954a6d6319d9df08f628243e6ba55acd.jpg</url></resource></object>
+    <object id="22_142156774" type="button" x="90913.85091367162" y="-8151.3844910989665" r="0" s="2.7731692291022996" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="23_142156774" type="image" x="90913.70201565872" y="-8083.2636502023" r="0" s="1.2310326069903115">
+      <source w="1283" h="1087">3427477523<url>3427477523.jpg</url></source>
+      <sourceUrl>Untitled-1.jpg</sourceUrl>
+    <resource><id>3427477523</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/8/4/5/45c3613d55702347ca04963827be0749b2f5a.jpg</url></resource></object>
+    <object id="7_24309637" type="button" x="91195.50732933692" y="-5319.607473234241" r="0" s="4.062115715079499" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>bright-lights-locked</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="SECTION"/>
+      </layout>
+    </object>
+    <object id="14_142156774" type="button" x="91600.23352858616" y="-5573.475969450421" r="0" s="1.0879263402150472" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="15_142156774" type="image" x="91600.23352858616" y="-5512.50223317242" r="0" s="0.3690145814917825">
+      <source w="1633" h="1380">3427430363<url>3427430363.jpg</url></source>
+      <sourceUrl>Radni%20proces%20proizvo%C4%91a%C4%8Da.jpg</sourceUrl>
+    <resource><id>3427430363</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/c/3/7/c11e0b174b797677b7dc4d036261fc41408fd.jpg</url></resource></object>
+    <object id="9_142156774" type="image" x="90366.20402226628" y="-5573.5504184568645" r="0" s="0.46714049162696225">
+      <source w="1700" h="1276">3427421657<url>3427421657.jpg</url></source>
+      <sourceUrl>Kupovina%20poklona.jpg</sourceUrl>
+    <resource><id>3427421657</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/0/6/8/62be8d0f9c73ad8752cbd458f9ea6a2350aa8.jpg</url></resource></object>
+    <object id="0_142156774" type="image" x="90550.01861917762" y="-4611.967051220426" r="0" s="0.7688720954548226">
+      <source w="1121" h="809">3427398527<url>3427398527.jpg</url></source>
+      <sourceUrl>administracija.jpg</sourceUrl>
+    <resource><id>3427398527</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/8/e/e/fa6dd1a4afcbf0920999678f5b39df5ab835f.jpg</url></resource></object>
+    <object id="1_24309637" type="button" x="88871.29139380204" y="-7261.13755951818" r="0" s="20.92262882823684" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>575.1999035437605</w>
+        <h>362.4906514640453</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>bright-lights-locked</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="OVERVIEW"/>
+      </layout>
+    </object>
+    <object id="0_24309637" type="button" x="85126.12716314083" y="-7377.7197436827755" r="0" s="2.6574657146149443" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>bright-lights-locked</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="SECTION"/>
+      </layout>
+    </object>
+    <object id="11_24309637" type="button" x="93234.6595891539" y="-7376.6117407242655" r="0" s="2.866191474872068" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>bright-lights-locked</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="SECTION"/>
+      </layout>
+    </object>
+    <object id="33_24309637" type="text" x="91741.09104877905" y="-9630.351228621072" r="0" s="41.82672835036175" class="head">
+      <height>31.9921875</height>
+      <width>401.5542184815218</width>
+      <p>
+        <text><![CDATA[Pokloni]]></text>
+      </p>
+    </object>
+    <object id="5_24309637" type="text" x="91600.13502141774" y="-6143.120433476227" r="0" s="7.164183656836313" class="strong">
+      <height>31.9921875</height>
+      <width>258.6723796475554</width>
+      <p align="center">
+        <text><![CDATA[Dijagrami aktivnosti]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="7_24309637"/>
+      </layout>
+    </object>
+    <object id="8_24309637" type="text" x="93224.61198505005" y="-7941.054059762572" r="0" s="6.318727592315821" class="strong">
+      <height>31.9921875</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Dijagram klasa]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="11_24309637"/>
+      </layout>
+    </object>
+    <object id="12_4" type="text" x="85129.46759065698" y="-8035.810165060799" r="0" s="5.858576471175998" class="strong">
+      <height>31.9921875</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Opis teme]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="0_24309637"/>
+      </layout>
+    </object>
+    <object id="3_24309637" type="button" x="88081.66181051207" y="-6399.33879793864" r="0" s="3.8500013328685503" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>bright-lights-locked</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="SECTION"/>
+      </layout>
+    </object>
+    <object id="49_24309637" type="text" x="88081.10846555703" y="-7453.297372010259" r="0" s="7.550173749887553" class="strong">
+      <height>31.9921875</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Use-case dijagram]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="3_24309637"/>
+      </layout>
+    </object>
+    <object id="53_24309637" type="button" x="90555.74476316335" y="-4617.34743644737" r="0" s="1.7143041227256839" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.0000000000006</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>bright-lights-locked</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="child" parent-id="7_24309637"/>
+      </layout>
+    </object>
+    <object id="54_24309637" type="text" x="90556.34678472539" y="-4987.338941713312" r="-1.440913565903286e-15" s="1.7885106572291727" class="strong">
+      <height>63.984375</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Administracija]]></text>
+      </p>
+      <p align="center">
+        <text><![CDATA[uposlenika]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="53_24309637"/>
+      </layout>
+    </object>
+    <object id="57_24309637" type="button" x="91776.67568816505" y="-4507.331564875526" r="0" s="1.2873292478251404" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>bright-lights-locked</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="child" parent-id="7_24309637"/>
+      </layout>
+    </object>
+    <object id="4_142156774" type="image" x="91776.67767385949" y="-4428.561923844537" r="0" s="0.44315705795232974">
+      <source w="1629" h="1547">3427411280<url>3427411280.jpg</url></source>
+      <sourceUrl>Kreiranje%20vlastitog%20poklona.jpg</sourceUrl>
+    <resource><id>3427411280</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/1/e/d/2261eb619412d29d27a9d4324848aeaf25032.jpg</url></resource></object>
+    <object id="58_24309637" type="text" x="91776.55957713064" y="-4849.734790188475" r="0" s="2.2181454756277095" class="strong">
+      <height>63.984375</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Kreiranje vlastitog poklona]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="57_24309637"/>
+      </layout>
+    </object>
+    <object id="0" type="button" x="84670.07331469865" y="-7409.946835918748" r="0" s="0.8794118510177993" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="1" type="text" x="84692.13252952755" y="-7508.062666465846" r="0" s="2.1708638710947645" class="body">
+      <height>31.9921875</height>
+      <width>315.7137970248964</width>
+      <p>
+        <text><![CDATA[Trenutna procedura prodaje]]></text>
+      </p>
+    </object>
+    <object id="2" type="text" x="84704.94704087019" y="-7270.236770782932" r="0" s="2.1708638710947645" class="body">
+      <height>127.96875</height>
+      <width>329.5100229604101</width>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[proizvodnja]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[predstavljanje ponude]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[komunikacija sa mušterijama]]></text>
+      </p>
+    </object>
+    <object id="3" type="button" x="85156.89536783886" y="-7019.49902162086" r="0" s="0.42892312376991987" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="4" type="text" x="85158.55014781666" y="-7118.877116825236" r="0" s="1.2271594647285196" class="body">
+      <height>31.9921875</height>
+      <width>-86.8828125</width>
+      <p>
+        <text><![CDATA[Zahtjevi]]></text>
+      </p>
+    </object>
+    <object id="5" type="text" x="85169.95" y="-6985.35" r="0" s="0.8997517821637907" class="body">
+      <height>127.96875</height>
+      <width>341.334375</width>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[dostupno kupcima]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[dostupno prodavačima]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[dostupno proizvođačima]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[dostupno direktoru]]></text>
+      </p>
+    </object>
+    <object id="6" type="button" x="85393.53153482253" y="-6812.45633469886" r="0" s="0.23220681362052065" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="7" type="text" x="85391.40973813886" y="-6849.681710370376" r="0" s="0.7444900644444414" class="body">
+      <height>31.9921875</height>
+      <width>-66.65625</width>
+      <p>
+        <text><![CDATA[Akteri]]></text>
+      </p>
+    </object>
+    <object id="8" type="text" x="85391.45" y="-6786.8" r="0" s="0.6152810449954061" class="body">
+      <height>159.9609375</height>
+      <width>279.14776393990644</width>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[kupci]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[prodavači]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[proizvođači]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[administrator sistema]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[direktor]]></text>
+      </p>
+    </object>
+    <object id="9" type="text" x="85552.03346954274" y="-7611.36862285419" r="0" s="3.666948005229294" class="body">
+      <height>95.9765625</height>
+      <width>257.04458907621483</width>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[čime se preduzeće bavi]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215"><![CDATA[poteškoće]]></text>
+      </p>
+    </object>
+    <object id="11" type="button" x="87608.42670104795" y="-6741.469207054082" r="0" s="1.3891191976534274" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="12" type="button" x="88810.74093062252" y="-6741.58088056375" r="0" s="1.2720727816120139" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="13" type="button" x="87888.98778183384" y="-5928.299934164642" r="0" s="1.7106937901373465" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="14" type="button" x="87145.27943195708" y="-6481.977195091973" r="0" s="1.2914134294474395" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="1_142156774" type="button" x="90366.24124676951" y="-4687.756139780869" r="0" s="0.6327616605016633" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="2_142156774" type="button" x="90672.7850308045" y="-4507.2172991530915" r="0" s="0.7738294212078671" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="3_142156774" type="button" x="90323.39584356072" y="-4408.274569588424" r="0" s="0.6824354428172344" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="5_142156774" type="button" x="91574.51139685961" y="-4596.481657879981" r="0" s="0.5823643391882221" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="6_142156774" type="button" x="91944.63463239817" y="-4428.561923844535" r="0" s="0.5334442193979658" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="7_142156774" type="button" x="91664.9669396896" y="-4279.477788439537" r="0" s="0.5196049437929992" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="8_142156774" type="button" x="90366.27847127273" y="-5654.997631507088" r="0" s="1.142049673041172" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="10_142156774" type="text" x="90366.31569577595" y="-5949.694551055198" r="-1.4409135659032865e-15" s="1.788510657229173" class="strong">
+      <height>31.9921875</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Kupovina poklona]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="53_24309637"/>
+      </layout>
+    </object>
+    <object id="11_142156774" type="button" x="90114.30580896151" y="-5746.048766388643" r="0" s="0.4775017370755267" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="12_142156774" type="button" x="90507.54546100106" y="-5585.2761369718655" r="0" s="0.5349511631480405" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="13_142156774" type="button" x="90212.35515044884" y="-5411.400482420866" r="0" s="0.33068896552182125" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="16_142156774" type="text" x="91611.43810405605" y="-5835.76929161642" r="-1.4409135659032865e-15" s="1.788510657229173" class="strong">
+      <height>63.984375</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Radni proces proizvođača]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="53_24309637"/>
+      </layout>
+    </object>
+    <object id="17_142156774" type="button" x="91486.06597720362" y="-5655.444325545754" r="0" s="0.4649884776124837" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="18_142156774" type="button" x="91684.32368136516" y="-5405.072316873088" r="0" s="0.5075921426527518" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="19_142156774" type="image" x="93287.80638216561" y="-7246.456817766748" r="0" s="1.2055002536290311">
+      <source w="1383" h="780">3427458434<url>3427458434.jpg</url></source>
+      <sourceUrl>Untitled-1.jpg</sourceUrl>
+    <resource><id>3427458434</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/0/9/e/b112aced7f7b15fecf090966bfa168fd03f78.jpg</url></resource></object>
+    <object id="20_142156774" type="button" x="92878.78354075983" y="-7350.610977782525" r="0" s="1.195392280762468" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="21_142156774" type="button" x="93730.59184799393" y="-7245.600654192637" r="0" s="1.218196528249029" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="24_142156774" type="text" x="90913.48852220146" y="-8858.408163305394" r="0" s="7.164183656836313" class="strong">
+      <height>31.9921875</height>
+      <width>258.6723796475554</width>
+      <p align="center">
+        <text><![CDATA[MVVM model]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="7_24309637"/>
+      </layout>
+    </object>
+    <object id="25_142156774" type="button" x="90498.16488618906" y="-8427.366957988519" r="0" s="1.1030393297117094" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="26_142156774" type="button" x="90558.46858140906" y="-7810.408041583412" r="0" s="1.311508899050898" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="27_142156774" type="button" x="91221.92090233872" y="-8286.993356337522" r="0" s="1.3174217984020147" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="28_142156774" type="button" x="91291.86574389329" y="-7765.887535729634" r="0" s="1.121080603828364" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="29_142156774" type="button" x="88717.15852952184" y="-9349.90182134485" r="0" s="2.91147530079039" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="30_142156774" type="text" x="88716.78628448962" y="-10009.78058996518" r="0" s="7.550173749887553" class="strong">
+      <height>31.9921875</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[Gift shoot]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="3_24309637"/>
+      </layout>
+    </object>
+    <object id="31_142156774" type="button" x="88081.81070852496" y="-9349.827372338406" r="0" s="0.8243670888053174" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="32_142156774" type="text" x="89070.75408562974" y="-9364.084357072517" r="0" s="5.920812939534142" class="body">
+      <height>95.9765625</height>
+      <width>211.55571343005457</width>
+      <p listType="bullet" indent="1">
+        <text><![CDATA[opis teme]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text><![CDATA[osnovne funkcionalnosti]]></text>
+      </p>
+    </object>
+    <object id="35_142156774" type="text" x="84471.9238262055" y="-7423.68779711356" r="0" s="2.1708638710947645" class="body">
+      <height>31.9921875</height>
+      <width>0</width>
+      <p>
+        <text><![CDATA[]]></text>
+      </p>
+    </object>
+  </zui-table>
+  <background>
+    <layer depth="22.288733911792082" fadescale="0.09870457463876257">
+      <object id="background881273605" type="image" x="89515.88469516106" y="-7185.7064285080805" r="0" s="56.30072272968926">
+        <source w="1291" h="720">881273605<url>881273605.png</url></source>
+        <sourceUrl>bokeh6.png</sourceUrl>
+      <resource><id>881273605</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/c/7/f/441c333ece868bdf22cb7c286587485d33288.png</url></resource></object>
+    </layer>
+  </background>
+  <path>
+    <s>
+      <eagle o="1_24309637"/>
+    </s>
+    <s>
+      <eagle o="0_24309637"/>
+    </s>
+    <s>
+      <eagle o="0"/>
+    </s>
+    <s>
+      <eagle o="3"/>
+    </s>
+    <s>
+      <eagle o="6"/>
+    </s>
+    <s>
+      <eagle o="3_24309637"/>
+    </s>
+    <s>
+      <eagle o="11"/>
+    </s>
+    <s>
+      <eagle o="12"/>
+    </s>
+    <s>
+      <eagle o="13"/>
+    </s>
+    <s>
+      <eagle o="14"/>
+    </s>
+    <s>
+      <eagle o="7_24309637"/>
+    </s>
+    <s>
+      <eagle o="53_24309637"/>
+    </s>
+    <s>
+      <eagle o="1_142156774"/>
+    </s>
+    <s>
+      <eagle o="2_142156774"/>
+    </s>
+    <s>
+      <eagle o="3_142156774"/>
+    </s>
+    <s>
+      <eagle o="57_24309637"/>
+    </s>
+    <s>
+      <eagle o="5_142156774"/>
+    </s>
+    <s>
+      <eagle o="6_142156774"/>
+    </s>
+    <s>
+      <eagle o="7_142156774"/>
+    </s>
+    <s>
+      <eagle o="8_142156774"/>
+    </s>
+    <s>
+      <eagle o="11_142156774"/>
+    </s>
+    <s>
+      <eagle o="12_142156774"/>
+    </s>
+    <s>
+      <eagle o="13_142156774"/>
+    </s>
+    <s>
+      <eagle o="14_142156774"/>
+    </s>
+    <s>
+      <eagle o="17_142156774"/>
+    </s>
+    <s>
+      <eagle o="18_142156774"/>
+    </s>
+    <s>
+      <eagle o="11_24309637"/>
+    </s>
+    <s>
+      <eagle o="20_142156774"/>
+    </s>
+    <s>
+      <eagle o="21_142156774"/>
+    </s>
+    <s>
+      <eagle o="22_142156774"/>
+    </s>
+    <s>
+      <eagle o="25_142156774"/>
+    </s>
+    <s>
+      <eagle o="26_142156774"/>
+    </s>
+    <s>
+      <eagle o="27_142156774"/>
+    </s>
+    <s>
+      <eagle o="28_142156774"/>
+    </s>
+    <s>
+      <eagle o="29_142156774"/>
+    </s>
+    <s>
+      <eagle o="31_142156774"/>
+    </s>
+    <s>
+      <eagle o="34_142156774"/>
+    </s>
+  </path>
+  <style type="text/css"><![CDATA[
+@font-face
+{
+	src: url('PlayfairDisplay-Regular.keg');
+	fontFamily: body;
+	font-class: body;
+	font-style: normal;
+	font-weight: normal;
+	font-family: PlayfairDisplay;
+}
+
+@font-face
+{
+	src: url('PlayfairDisplay-Bold.keg');
+	fontFamily: head;
+	font-class: head;
+	font-style: normal;
+	font-weight: bold;
+	font-family: PlayfairDisplay;
+}
+
+@font-face
+{
+	src: url('PlayfairDisplay-BoldItalic.keg');
+	fontFamily: strong;
+	font-class: strong;
+	font-style: italic;
+	font-weight: bold;
+	font-family: PlayfairDisplay;
+}
+
+@font-face
+{
+	src: url('PlayfairDisplay-Italic.keg');
+	font-style: italic;
+	font-weight: normal;
+	font-family: PlayfairDisplay;
+}
+
+.line1
+{
+	color: #260606;
+	gradEndColor: #260606;
+	gradStartColor: #260606;
+}
+
+.line2
+{
+	alpha: 1;
+	borderThickness: 0;
+	color: #380416;
+	gradEndColor: #380416;
+	gradStartColor: #380416;
+}
+
+.line3
+{
+	color: #65111e;
+	gradEndColor: #65111e;
+	gradStartColor: #65111e;
+}
+
+.line4
+{
+	alpha: 1;
+	borderThickness: 0;
+	color: #924b5d;
+	gradEndColor: #924b5d;
+	gradStartColor: #924b5d;
+}
+
+.line5
+{
+	color: #cb806c;
+	gradEndColor: #cb806c;
+	gradStartColor: #cb806c;
+}
+
+.poly1
+{
+	borderColor: #260606;
+	borderThickness: 9;
+	gradEndColor: #260606;
+	gradStartColor: #260606;
+	radius: 0;
+	thickness: 100;
+}
+
+.poly2
+{
+	borderColor: #380416;
+	borderThickness: 0;
+	gradEndColor: #380416;
+	gradStartColor: #380416;
+	radius: 0;
+	thickness: 100;
+}
+
+.poly3
+{
+	borderColor: #65111e;
+	borderThickness: 9;
+	gradEndColor: #65111e;
+	gradStartColor: #65111e;
+}
+
+.poly4
+{
+	borderAlpha: 1;
+	borderColor: #924b5d;
+	borderThickness: 0;
+	gradEndColor: #924b5d;
+	gradStartColor: #924b5d;
+	radius: 0;
+	thickness: 100;
+}
+
+.poly5
+{
+	borderAlpha: 1;
+	borderColor: #cb806c;
+	borderThickness: 9;
+	gradEndColor: #cb806c;
+	gradStartColor: #cb806c;
+	radius: 0;
+	thickness: 100;
+}
+
+Background
+{
+	gradEnd: #fff;
+	gradStart: #fff;
+}
+
+Grid
+{
+	color: #b8b8b8;
+}
+
+ZArrow
+{
+	alpha: 1;
+	borderAlpha: 0;
+	borderColor: #fff;
+	borderThickness: 0;
+	color: #288acc;
+	lockTintAlpha: 0;
+	thickness: 7;
+}
+
+ZCircle
+{
+	borderAlpha: 1;
+	borderColor: #288acc;
+	borderThickness: 0;
+	gradEndAlpha: 1;
+	gradEndColor: #288acc;
+	gradStartAlpha: 1;
+	gradStartColor: #288acc;
+	lockTintAlpha: 0;
+	radius: 0;
+	thickness: 100;
+}
+
+ZCurveLine
+{
+	alpha: 1;
+	color: #318bff;
+	thickness: 0;
+}
+
+ZFrame.bracket
+{
+	borderAlpha: 0.5;
+	borderColor: #cc806d;
+	borderThickness: 1;
+	gradEndAlpha: 0.9;
+	gradEndColor: #cc806d;
+	gradStartAlpha: 0.9;
+	gradStartColor: #cc806d;
+	padding: 1.03;
+	thickness: 8;
+}
+
+ZFrame.circle
+{
+	gradEndAlpha: 0.9;
+	gradEndColor: #944b5c;
+	gradStartAlpha: 0.9;
+	gradStartColor: #944b5c;
+	padding: 1.03;
+	thickness: 8;
+}
+
+ZFrame.invisible
+{
+	borderAlpha: 0.6;
+	borderColor: #5aa7cb;
+	gradEndAlpha: 0.3;
+	gradEndColor: #000;
+	gradStartAlpha: 0.02;
+	gradStartColor: #000;
+	radius: 0;
+}
+
+ZFrame.roundrect
+{
+	borderAlpha: 0.8;
+	borderColor: #924b5d;
+	borderThickness: 20;
+	color: #fff;
+	gradEndColor: #ffc8b1;
+	gradStartAlpha: 0.5;
+	gradStartColor: #ffc8b1;
+	padding: 1.03;
+	radius: 3;
+}
+
+ZLabel
+{
+	lockTintAlpha: 0.15;
+	padding: 1.2;
+}
+
+ZLabel.body
+{
+	color: #333;
+	fontFamily: body;
+}
+
+ZLabel.body-background
+{
+	background-alpha: 0.9;
+	background-color: #ffc8b1;
+	background-padding: 5;
+}
+
+ZLabel.head
+{
+	color: #333;
+	fontFamily: head;
+}
+
+ZLabel.head-background
+{
+	background-alpha: 0.8;
+	background-color: #924b5d;
+	background-padding: 5;
+}
+
+ZLabel.strong
+{
+	color: #333;
+	fontFamily: strong;
+}
+
+ZLabel.strong-background
+{
+	background-alpha: 0.9;
+	background-color: #ffc8b1;
+	background-padding: 5;
+}
+
+ZLine
+{
+	alpha: 1;
+	color: #7a8082;
+	lockTintAlpha: 0;
+}
+
+ZMarker
+{
+	alpha: 0.85;
+	color: #69cc77;
+	thickness: 25;
+}
+
+ZPoly
+{
+	borderAlpha: 1;
+	borderColor: #318bff;
+	borderThickness: 2;
+	gradEndAlpha: 1;
+	gradEndColor: #318bff;
+	gradStartAlpha: 1;
+	gradStartColor: #318bff;
+	lockTintAlpha: 0;
+	radius: 0;
+	thickness: 100;
+}
+
+ZVideo
+{
+	padding: 1.2;
+}
+
+]]></style>
+  <hash>-205d0085</hash>
+<sync><oid>-2fsv8hly-vw</oid><title>pokloni</title><hash>-205d0085</hash></sync><config>Q+65zVopJL2t7rPic24JCxmJS5Yz8u8hQQUWiDCwcEv5cRioKxI6xE1eQjbi5NbEaA8uUgEYOSEOUih9FQAN/JYlWnJSwvHgTaGEtgEl8RDri7ZOwh/QbFVBOKc5TBpy7sJpKhH6vSGbP/BwyIZF+IlI/DZvK2cCx0HOuaLMYHlzXloWogiaaaxtN5wFBPxOaAvLUFYREoGJZkDfJYMvTWcs6PZ8b2pE5F7gD2xrhP13FnY6Gd026IGiZNxRn41fPmDKjljjzRt2BrkwGxcMMdj4/K/P2td635HRsVcc/lfBJ5RJRDa8+aNlCp1dq8N3XVyL8jV72q/QHBdd464AUA==</config></zuiprezi>

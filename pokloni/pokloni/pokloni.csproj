@@ -43,6 +43,12 @@
       <HintPath>dlls\MultivariableMetricVisualisation.dll</HintPath>
       <Aliases>global</Aliases>
     </Reference>
+    <Reference Include="NationalStandard">
+      <HintPath>..\..\..\OOAD - Libs\OOAD-Bank\OOAD-Bank\bin\Debug\NationalStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="OOAD-Bank">
+      <HintPath>..\..\..\OOAD - Libs\OOAD-Bank\OOAD-Bank\bin\Debug\OOAD-Bank.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />

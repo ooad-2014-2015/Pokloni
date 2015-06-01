@@ -10,6 +10,9 @@ using System.Windows.Input;
 using pokloni;
 using System.Windows;
 using System.Collections.ObjectModel;
+using OOAD_Bank;
+using NationalStandard;
+using System.Threading;
 
 namespace pokloni.ViewModel1
 {
@@ -22,6 +25,9 @@ namespace pokloni.ViewModel1
         public ObservableCollection<tblPoklon> listaPoklona{get; set;}
         ajdin_connection db = new ajdin_connection();
         public ObservableCollection<string> imenaPoklona { get; set; }
+        public ObservableCollection<int> kolicinePoklona { get; set; }
+        public bool naAdresu { get; set; }
+
 
         public ProdavacFormaViewModel() {
             
@@ -31,20 +37,47 @@ namespace pokloni.ViewModel1
 
             imenaPoklona = new ObservableCollection<string>();
 
+            kolicinePoklona = new ObservableCollection<int>();
             foreach (tblPoklon p in listaPoklona)
             {
                 imenaPoklona.Add(p.naziv);
             }
+            for (int i = 0; i < 5; i++) {
+                kolicinePoklona.Add(i+1);
+            }
 
         }
+        Isporuka isp;
+        public class Isporuka : IShippment {
 
-       
+            bool allGood = false;
+            public bool RegisterTransaction() {
+                Thread.Sleep(1000);
+                allGood = true;
+                return true;
+            }
+
+            public DateTime GetShippmentETA(int a) {
+                return DateTime.Now;
+            }
+
+        };
+
+
+        public void RegistujIsporuku() {
+            isp = new Isporuka();
+            isp.RegisterTransaction();
+        }
+
+        public void RegistrujPlacanje() {
+            OOADTransaction t = new OOADTransaction("recipient", "sender", 100.0m, 2);
+            //banka obavlja svoje
+        }
 
         public void Prodaja(object param)
         {
             try
             {
-               
                 if (db.tblPoklon.Count(p => p.naziv == imePoklona) >= kolicina)
                 {
                     for (int i = 0; i < kolicina; i++)
@@ -53,7 +86,13 @@ namespace pokloni.ViewModel1
                         db.tblPoklon.Remove(ld);
                         //dodati prodavacu prodan poklon?
                     }
-                    global::System.Windows.MessageBox.Show(string.Format("Prodaja uspješno obavljena"));
+                    Thread t_banka = new Thread(RegistrujPlacanje);
+                    Thread t_isporuka = new Thread(RegistujIsporuku);
+                    t_banka.Start();
+                    t_isporuka.Start();
+                    if (isp.RegisterTransaction())
+                        global::System.Windows.MessageBox.Show(string.Format("Prodaja uspješno obavljena"));
+                    
                 }
                 else 
                 {

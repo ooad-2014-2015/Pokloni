@@ -41,6 +41,7 @@ namespace pokloni.ViewModel1 {
 
             ajdin_connection db = new ajdin_connection();
 
+
             try {
 
                 Komentari = new ObservableCollection<tblKomentar>(db.tblKomentar.ToList());
@@ -71,7 +72,7 @@ namespace pokloni.ViewModel1 {
                     Temp.slika = "Untitled-1.jpg";
                     ajdin_connection db = new ajdin_connection();
                     Temp.poklon_id = db.tblPoklon.Max(p => p.poklon_id) + 1;
-                    db.tblPoklon.Add(Temp);
+                    db.tblPoklon.Add(Temp); 
                     db.SaveChanges();
                 }
                 catch(Exception e) {
