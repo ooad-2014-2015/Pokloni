@@ -58,9 +58,9 @@
                     <Grid HorizontalAlignment="Left" Height="257" VerticalAlignment="Top" Width="558">
                         <Label Content="Odaberite poklon:" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="115"/>
                     </Grid>
-                    <ComboBox Name = "OdabirPoklona" HorizontalAlignment="Left" Height="26" Margin="198,10,0,0" VerticalAlignment="Top" Width="293"/>
+                    <ComboBox Name = "OdabirPoklona" HorizontalAlignment="Left" Height="26" Margin="198,10,0,0" VerticalAlignment="Top" Width="293" ItemsSource="{Binding Path=imenaPoklona}"/>
                     <Label Content="Količina:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.13,2.046" Margin="10,41,0,0"/>
-                    <ComboBox Name ="Kolicina" HorizontalAlignment="Left" Height="26" Margin="91,41,0,0" VerticalAlignment="Top" Width="78" />
+                    <ComboBox Name ="Kolicina" HorizontalAlignment="Left" Height="26" Margin="91,41,0,0" VerticalAlignment="Top" Width="78" ItemsSource="{Binding Path=kolicinePoklona}" />
                     <Button Content="Naruči" HorizontalAlignment="Left" Height="26" Margin="491,226,0,0" VerticalAlignment="Top" Width="57"/>
                     <CheckBox Content="Hitno" HorizontalAlignment="Left" Height="27" Margin="372,230,0,0" VerticalAlignment="Top" Width="157"/>
                 </Grid>
