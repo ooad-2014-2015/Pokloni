@@ -1,0 +1,34 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics (ID=0x106)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.249 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Ivona\Desktop\ooad pokloni\Pokloni\igrica\Gift_shoot_exe\giftShoot_32bit\giftShoot_32_Data\Managed\System.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.633751 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 213.
+Total: 0.261283 ms (FindLiveObjects: 0.028651 ms CreateObjectMapping: 0.018388 ms MarkObjects: 0.200559 ms  DeleteObjects: 0.012401 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.586431 ms
+
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 150.
+Total: 0.196710 ms (FindLiveObjects: 0.017960 ms CreateObjectMapping: 0.016677 ms MarkObjects: 0.132138 ms  DeleteObjects: 0.028223 ms)
+
